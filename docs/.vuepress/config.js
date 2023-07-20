@@ -30,6 +30,10 @@ module.exports = {
           link: '/java/' //默认跳转到READMD.md
         },
         {
+          text: '其他',
+          link: '/other/' //默认跳转到READMD.md
+        },
+        {
           text: '我也想搭建这样的博客！',
           link: '/azilnote/' //默认跳转到READMD.md
         },
@@ -49,6 +53,17 @@ module.exports = {
            'Redis其他'
            ]
           }
+        ],
+        'other':[
+            {
+               title: '', //一级标题
+               collapsable: false, //是否可折叠
+               children:[
+               '',   //README.md
+               '个人提升',
+               '个人创业'
+               ]
+            }
         ]
       },
       sidebarDepth: 0
