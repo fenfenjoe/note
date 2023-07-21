@@ -10,7 +10,7 @@ module.exports = {
         // { text: 'CSDN', link: 'blog.csdn.net', target:'_self'},  //当前窗口打开
         {
           text: 'Redis',
-          link: '/redis/' //默认跳转到READMD.md
+          link: 'database/redis/' //默认跳转到READMD.md
         },
         {
           text: '消息中间件',
@@ -40,7 +40,7 @@ module.exports = {
         { text: 'External', link: 'https://google.com' },
       ],
       sidebar: {
-        '/redis/':[
+        '/database/redis/':[
           {
            title: '', //一级标题
            collapsable: false, //是否可折叠
