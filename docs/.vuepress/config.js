@@ -9,8 +9,17 @@ module.exports = {
         // { text: 'Baidu', link: 'www.baidu.com', target:'_blank'},  //新窗口打开
         // { text: 'CSDN', link: 'blog.csdn.net', target:'_self'},  //当前窗口打开
         {
-          text: 'Redis',
-          link: 'database/redis/' //默认跳转到READMD.md
+          text: '数据库',
+          items:[
+            {
+              text: 'Mysql',
+              link: '/database/mysql/' //默认跳转到READMD.md
+            },
+            {
+              text: 'Redis',
+              link: '/database/redis/' //默认跳转到READMD.md
+            }
+          ]
         },
         {
           text: '消息中间件',
@@ -31,7 +40,21 @@ module.exports = {
         },
         {
           text: '其他',
-          link: '/other/' //默认跳转到READMD.md
+          items:[
+            {
+              text: '获取信息的渠道',
+              items:[
+                  {
+                    text: 'RSS',
+                    link: '/datasource/RSS' //默认跳转到READMD.md
+                  },
+                  {
+                      text: '资源汇总',
+                      link: '/datasource/资源汇总' //默认跳转到READMD.md
+                    }
+                ]
+            }
+          ]
         },
         {
           text: '我也想搭建这样的博客！',
@@ -54,7 +77,7 @@ module.exports = {
            ]
           }
         ],
-        'other':[
+        '/other/':[
             {
                title: '', //一级标题
                collapsable: false, //是否可折叠
@@ -64,7 +87,7 @@ module.exports = {
                '个人创业'
                ]
             }
-        ]
+        ],
       },
       sidebarDepth: 0
   }
