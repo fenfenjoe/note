@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /hero.jpg
+heroImage: /images/hero.jpg
 heroText: 粉粉蕉的笔记本
 tagline:  编程、数学、量化
 # actionText: 快速上手 →

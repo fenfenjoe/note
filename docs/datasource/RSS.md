@@ -48,17 +48,17 @@ https://rsshub.app/bilibili/user/video/50329118
 （1）登录https://docs.rsshub.app/  
 > 该网站需要科学上网。国内可访问镜像网站：https://rsshub.rssforever.com
 
-![RSSHub.png](/RSSHub.png)  
+![RSSHub.png](/images/RSSHub.png)  
 
 （2）侧边栏找到“路由”，展开后可看到有许多可供订阅的RSS源，我们以Bilibili为例。
 
 （3）假如我们想订阅的是某个UP主更新的视频，我们可以使用以下订阅源链接。  
 
-![RSSHub-bilibili.png](/RSSHub-bilibili.png)
+![RSSHub-bilibili.png](/images/RSSHub-bilibili.png)
 
 （4）我想订阅“英雄联盟赛事”UP主的视频。进入B站，进入UP主的主页，我们可以看到UP主的UID。  
 
-![UP主UID.png](/UP主UID.png)  
+![UP主UID.png](/images/UP主UID.png)  
 
 （5）最后，我们得到了“订阅英雄联盟赛事UP主的视频”的RSS源链接为：**https://rsshub.app/bilibili/user/video/50329118**
 
