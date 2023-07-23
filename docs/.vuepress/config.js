@@ -2,6 +2,9 @@ module.exports = {
   title: '粉粉蕉的笔记本',
   description: 'Just playing around',
   base: '/note/',  //基础路径
+  head: [
+    ['link',{rel: 'icon', href: '/images/favicon.ico'}]  //网站图标
+  ],
   themeConfig: {
       logo: '', //导航栏logo
       nav: [
