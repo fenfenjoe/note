@@ -14,4 +14,5 @@ npm run docs:dev
 
 ## 参考
 
-vuepress官方文档：
+vuepress官方文档：https://vuepress.vuejs.org/zh/  
+

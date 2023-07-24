@@ -49,11 +49,11 @@ module.exports = {
               items:[
                   {
                     text: 'RSS',
-                    link: '/datasource/RSS' //默认跳转到READMD.md
+                    link: '/other/datasource/RSS' //默认跳转到READMD.md
                   },
                   {
                       text: '资源汇总',
-                      link: '/datasource/资源汇总' //默认跳转到READMD.md
+                      link: '/other/datasource/资源汇总' //默认跳转到READMD.md
                     }
                 ]
             }
@@ -79,18 +79,7 @@ module.exports = {
            'Redis其他'
            ]
           }
-        ],
-        '/other/':[
-            {
-               title: '', //一级标题
-               collapsable: false, //是否可折叠
-               children:[
-               '',   //README.md
-               '个人提升',
-               '个人创业'
-               ]
-            }
-        ],
+        ]
       },
       sidebarDepth: 0
   }
