@@ -50,3 +50,19 @@ select
 CONCAT('A','B',student_name,'HAHAHA')
 from student;
 ```
+
+
+## DISTINCT 的用法
+
+加在SELECT之后，比如：
+```sql
+select distinct name,age from person;
+```
+
+用于对查出来的行进行去重。  
+
+也可以用于group by的语句：
+```sql 
+select student_name,count(distinct subject) 
+from course group by student_name;
+```
