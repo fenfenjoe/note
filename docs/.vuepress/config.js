@@ -79,7 +79,18 @@ module.exports = {
            'Redis其他'
            ]
           }
-        ]
+        ],
+        '/database/mysql/':[
+          {
+             title: '', //一级标题
+             collapsable: false, //是否可折叠
+             children:[
+             '',   //README.md
+             'SQL速查'
+             ]
+            }
+        ],
+        '/azilnote/': 'auto'
       },
       sidebarDepth: 0
   }

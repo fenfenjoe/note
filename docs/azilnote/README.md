@@ -1,16 +1,29 @@
 ---
-title: 搭建Vuepress博客
+title: 搭建属于自己的博客
 ---
 
-# 搭建Vuepress博客
+# 搭建属于自己的博客
+
+## 概述
+
+当前的博客是使用一个叫Vuepress的框架搭建的。  
+Vuepress需要我们使用一种叫Markdown的格式去编写文章。  
+
+> 类似的框架还有：mdbook、mkdocs、hexo等。熟悉搭建步骤后可以尝试使用不同的框架！
+
+Markdown非常的强大，可以自动排版，用户可以在Markdown中插入表格、图片、链接、数学公式等。
+
+搭建博客前，你需要对以下内容有一定理解：  
+* Markdown
+* Node.js
+* Github
+* Github Pages
+
+当然，也可以跟着本教程，逐步了解上面的知识！  
 
 
-## 参考
-vuepress官方文档：[https://vuepress.vuejs.org/zh/guide/getting-started.html](https://vuepress.vuejs.org/zh/guide/getting-started.html)
 
-
-
-## 安装node
+## 安装node.js
 
 略
 
@@ -118,6 +131,8 @@ features:
 ---
 ```
 
+## 在本地启动项目
+
 
 8.执行命令“npm run docs:dev”，启动项目，测试一下。
 
@@ -197,3 +212,5 @@ git push origin master
 18.在github项目，settings->pages->branchs，选择gh-pages分支，save。等待一段时间后，刷新页面，就会显示你的vuepress已经部署成功。
 
 
+## 参考
+vuepress官方文档：[https://vuepress.vuejs.org/zh/guide/getting-started.html](https://vuepress.vuejs.org/zh/guide/getting-started.html)
