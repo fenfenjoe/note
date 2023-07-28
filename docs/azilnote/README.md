@@ -83,16 +83,15 @@ npm install vuepress --save
 
 5.在根目录下创建docs文件夹及里面的内容，现时的文档结构如下：
 ```
-note
-  - docs 
-    - .vuepress 
-      - public         # 放静态资源（图片）
-      config.js        # vuepress配置文件
-    config.md    
-    README.md          # 主页      
-  - node_modules
-  package.json
-  package-lock.json
+note（根目录）
+└—docs 
+  └——.vuepress 
+    ├———— public         # 放静态资源（图片）
+    └———— config.js       # vuepress配置文件   
+  └——README.md          # 主页      
+├—node_modules
+├—package.json
+└—package-lock.json
 ```
 
 6.config.js中，添加配置

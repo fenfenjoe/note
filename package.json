@@ -13,5 +13,9 @@
   "dependencies": {
     "vue-template-compiler": "^2.7.14",
     "vuepress": "^1.9.9"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.9.9",
+    "@vuepress/plugin-medium-zoom": "^1.9.9"
   }
 }

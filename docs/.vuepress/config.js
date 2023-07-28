@@ -6,8 +6,10 @@ module.exports = {
     ['link',{rel: 'icon', href: '/images/favicon.ico'}]  //网站图标
   ],
   themeConfig: {
+      lastUpdated: '最近更新时间', //文章添加最近更新时间
       logo: '', //导航栏logo
-      nav: [
+
+      nav: [ //导航栏配置
         { text: '首页', link: '/' },
         // { text: 'Baidu', link: 'www.baidu.com', target:'_blank'},  //新窗口打开
         // { text: 'CSDN', link: 'blog.csdn.net', target:'_self'},  //当前窗口打开
@@ -93,5 +95,10 @@ module.exports = {
         '/azilnote/': 'auto'
       },
       sidebarDepth: 0
-  }
+  },
+  plugins:[
+  '@vuepress/plugin-back-to-top',  //“回到顶部”插件
+  '@vuepress/last-updated', //显示最后更新时间
+  '@vuepress/plugin-medium-zoom' //图片可以点开放大
+  ]
 }
