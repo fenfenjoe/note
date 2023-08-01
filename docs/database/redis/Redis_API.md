@@ -8,7 +8,7 @@ sidebarDepth: 2
 
 ## 【Redis Client】命令
 
-### 命令行-键操作
+### 键操作
 ```shell
 ##### 键操作
 DEL <key>
@@ -21,7 +21,7 @@ EXPIREAT <key> <timestamp>
 Keys <pattern>
 ```
 
-### 命令行-键值对操作
+### 键值对操作
 ```shell
 ##### 键值对操作
 SET <key> <value> 
@@ -50,7 +50,7 @@ GETSET <key> <value>
 ```
 
 
-### 命令行-HASH表操作
+### HASH表操作
 ````shell
 ##### HASH表操作
 HSET <hashname> <key> <value>
@@ -70,7 +70,7 @@ HDEL <hashname> <key>
 ````
 
 
-### 命令行-双向链表操作
+### 双向链表操作
 ```shell
 ##### 双向链表操作（栈、队列、有限集合、消息队列）
 #【将给定值推入到列表左端】
@@ -93,7 +93,7 @@ BRPOP key
 
 
 
-### 命令行-集合操作
+### 集合操作
 ```shell
 ##### 集合操作
 #【往集合中添加成员】
@@ -117,7 +117,7 @@ SDIFF set1 set2 set3  #第一个集合的元素减去剩余集合的并集的元
 ```
 
 
-### 命令行-有序集合操作
+### 有序集合操作
 ```shell
 ##### 有序集合操作
 #【往集合添加成员，并标记该成员的分值】
@@ -129,7 +129,7 @@ ZREM zset-key member1
 ```
 
 
-### 命令行-bitmap操作
+### bitmap操作
 ```shell
 ##### bitmap操作（2.2.0版本新增）
 #【将某个bitmap的第offset位设置位0或者1】
