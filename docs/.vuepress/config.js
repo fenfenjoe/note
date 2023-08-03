@@ -10,7 +10,7 @@ module.exports = {
       logo: '', //导航栏logo
 
       nav: [ //导航栏配置
-        { text: '首页', link: '/' },
+//        { text: '首页', link: '/' },
         // { text: 'Baidu', link: 'www.baidu.com', target:'_blank'},  //新窗口打开
         // { text: 'CSDN', link: 'blog.csdn.net', target:'_self'},  //当前窗口打开
         {
