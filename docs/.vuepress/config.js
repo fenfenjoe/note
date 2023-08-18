@@ -7,7 +7,7 @@ module.exports = {
   ],
   themeConfig: {
       lastUpdated: '最近更新时间', //文章添加最近更新时间
-      logo: '', //导航栏logo
+      logo: '/images/favicon.ico', //导航栏logo
 
       nav: [ //导航栏配置
 //        { text: '首页', link: '/' },
@@ -29,6 +29,10 @@ module.exports = {
         {
           text: '消息中间件',
           items:[
+          {
+            text: '概述',
+            link: '/mq/' //默认跳转到READMD.md
+          },
           {
             text: 'Kafka',
             link: '/mq/kafka/' //默认跳转到READMD.md
