@@ -90,7 +90,7 @@ https://rsshub.app/bilibili/user/video/50329118
 
 可供选择的RSS阅读器：  
 * Feedly（在线RSS阅读器，需要翻墙）：https://feedly.com/
-* InoReader
+* InoReader（国内版）：https://www.innoreader.com/
 * TinyTinyRSS
 * FreshRSS
 * Miniflux
