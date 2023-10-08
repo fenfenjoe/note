@@ -14,42 +14,67 @@ module.exports = {
         // { text: 'Baidu', link: 'www.baidu.com', target:'_blank'},  //新窗口打开
         // { text: 'CSDN', link: 'blog.csdn.net', target:'_self'},  //当前窗口打开
         {
-          text: '数据库',
-          items:[
+         text: '开发笔记',
+         items:[
+          {
+           text: 'JAVA',
+           items: []
+          },
+          {
+            text: '消息中间件',
+            items:[
             {
-              text: 'Mysql',
-              link: '/database/mysql/' //默认跳转到READMD.md
+              text: '概述',
+              link: '/mq/' //默认跳转到READMD.md
             },
             {
-              text: 'Redis',
-              link: '/database/redis/' //默认跳转到READMD.md
+              text: 'Kafka',
+              link: '/mq/kafka/' //默认跳转到READMD.md
+            },
+            {
+              text: 'RocketMQ',
+              link: '/mq/rocketMq/' //默认跳转到READMD.md
             }
-          ]
-        },
-        {
-          text: '消息中间件',
-          items:[
-          {
-            text: '概述',
-            link: '/mq/' //默认跳转到READMD.md
+            ]
           },
           {
-            text: 'Kafka',
-            link: '/mq/kafka/' //默认跳转到READMD.md
+             text: 'PYTHON',
+             items: []
           },
           {
-            text: 'RocketMQ',
-            link: '/mq/rocketMq/' //默认跳转到READMD.md
-          }
-          ]
+             text: '数据库',
+             items: [
+                {
+                  text: 'Mysql',
+                  link: '/database/mysql/' //默认跳转到READMD.md
+                },
+                {
+                  text: 'Redis',
+                  link: '/database/redis/' //默认跳转到READMD.md
+                }
+             ]
+          },
+          {
+             text: '设计模式',
+             items: []
+          },
+          {
+             text: '前端',
+             items: []
+          },
+          {
+             text: '运维',
+             items: []
+          },
+         ]
         },
         {
-          text: 'Java',
-          link: '/java/' //默认跳转到READMD.md
+           text: '数学',
+           items: []
         },
         {
-          text: '设计模式',
-          link: '/designPattern/' //默认跳转到READMD.md
+           text: '量化',
+           items: []
         },
         {
           text: '其他',
