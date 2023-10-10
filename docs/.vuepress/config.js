@@ -3,8 +3,12 @@ module.exports = {
   description: 'Just playing around',
   base: '/note/',  //基础路径
   head: [
-    ['link',{rel: 'icon', href: '/images/favicon.ico'}]  //网站图标
+    ['link',{rel: 'icon', href: '/images/favicon.ico'}],  //网站图标
   ],
+  extendMarkdown(md) {
+    md.use(require('markdown-it-mathjax3'))
+    md.linkify.set({ fuzzyEmail: false })
+  },
   themeConfig: {
       lastUpdated: '最近更新时间', //文章添加最近更新时间
       logo: '/images/favicon.ico', //导航栏logo
@@ -18,14 +22,35 @@ module.exports = {
          items:[
           {
            text: 'JAVA',
-           items: []
+           items: [
+             {
+               text: '概述',
+               link: '/java/' //默认跳转到READMD.md
+             },
+             {
+               text: 'spring framework',
+               link: '/java/spring/springframework/'
+             },
+             {
+               text: 'spring boot',
+               link: '/java/spring/springboot/'
+             },
+             {
+               text: 'spring cloud alibaba',
+               link: '/java/spring/springcloudAlibaba/'
+             },
+             {
+               text: 'spring cloud netflix',
+               link: '/java/spring/springcloudNetflix/'
+             },
+           ]
           },
           {
-            text: '消息中间件',
-            items:[
+           text: '中间件',
+           items:[
             {
-              text: '概述',
-              link: '/mq/' //默认跳转到READMD.md
+            text: '消息中间件',
+            link: '/mq/' //默认跳转到READMD.md
             },
             {
               text: 'Kafka',
@@ -34,12 +59,20 @@ module.exports = {
             {
               text: 'RocketMQ',
               link: '/mq/rocketMq/' //默认跳转到READMD.md
+            },
+            {
+              text: 'Redis',
+              link: '/redis/'
+            },
+            {
+              text: 'MongoDB',
+              link: '/mongoDB/'
             }
-            ]
+           ]
           },
           {
              text: 'PYTHON',
-             items: []
+             link: '/python/'
           },
           {
              text: '数据库',
@@ -56,25 +89,30 @@ module.exports = {
           },
           {
              text: '设计模式',
-             items: []
+             link: '/designPattern/' //默认跳转到READMD.md
           },
           {
              text: '前端',
-             items: []
+             link: '/frontend/' //默认跳转到READMD.md
           },
           {
              text: '运维',
-             items: []
-          },
+             link: '/devops/' //默认跳转到READMD.md
+          }
          ]
         },
         {
            text: '数学',
-           items: []
+           items: [
+            {
+               text: '线性代数',
+               link: '/math/线性代数/'
+            }
+           ]
         },
         {
            text: '量化',
-           items: []
+           link: '/quant/' //默认跳转到READMD.md
         },
         {
           text: '其他',
@@ -126,6 +164,18 @@ module.exports = {
             }
         ],
         '/azilnote/': 'auto',
+        '/math/线性代数/': [
+            {
+             title: '线性代数', //一级标题
+             collapsable: false, //是否可折叠
+             children:[
+              '',
+              '行列式.md',
+              '矩阵.md',
+              '向量.md'
+             ]
+            },
+        ],
         '/designPattern/':[
             {
              title: '设计模式', //一级标题
