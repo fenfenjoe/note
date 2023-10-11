@@ -1,12 +1,14 @@
 ---
 title: RSS
 sidebar: 'auto'
+sidebarDepth: 2
 ---
 
 # RSS
 
 ## 什么是RSS
-
+### 测试1
+#### 测试2
 RSS是一个“订阅工具”。你可以用RSS订阅你感兴趣的内容（Twitter博主、BBC新闻、B站视频更新、博客文章等等）。  
 
 当这些内容有更新时，便可通过RSS自动推送给你。  
