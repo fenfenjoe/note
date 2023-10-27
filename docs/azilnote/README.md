@@ -144,72 +144,10 @@ features:
 成功后结果如下：  
 ![IMG20230719-173036752.png](/images/IMG20230719-173036752.png)
 
-> 至此，项目已经可以成功启动了。下面我们再看看如何通过Github Action将项目托管到Github，不用总是在自己的电脑运行着。
+
+[写一篇文章](./写一篇文章.md)  
+[定制侧边栏](./侧边栏.md)  
+[部署到服务器（github pages）](./部署到githubpages.md)  
+[申请域名](./申请属于自己的域名.md)  
 
 
-
-## 在Github中部署你的博客
-
-10.安装Git
-
-略
-
-
-11.在根目录创建.github/workflows目录，在里面创建CI.yml文件（名称任意命名，但后缀一定要.yml）
-```
-.github
-  - workflows
-    CI.yml  
-```
-
-12.CI.yml文件内容如下：
-```yaml
-name: A TO A:GH_PAGES
-on: [push]
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@master
-
-      - name: Build and Deploy
-        uses: jenkey2011/vuepress-deploy@master
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TARGET_REPO: fenfenjoe/note # 你的仓库名称
-          TARGET_BRANCH: gh_pages
-          BUILD_SCRIPT: npm install && npm run docs:build
-          BUILD_DIR: docs/.vuepress/dist/
-```
-
-
-13.到Github创建同名的远程仓库
-
-> 注意，如果创建的仓库为私人仓库，则无法**免费**使用Github Pages的服务来部署你的Vuepress项目
-
-
-14.创建本地仓库，并添加远程仓库
-```
-git init  
-git remote add origin git@github.com:fenfenjoe/note.git  
-```
-
-
-
-15.在github里，点开头像->settings->developer settings->personal access token->generate token 创建一个新的密钥，然后复制它，或者记下来。
-
-
-16.回到你的github项目，settings->secrets and variables->actions->new repository secrets，添加一个名称为ACCESS_TOKEN的token，将刚刚你复制的密钥放进去，保存。
-
-
-17.push你的代码到远程仓库
-```shell
-git push origin master
-```
-
-18.在github项目，settings->pages->branchs，选择gh-pages分支，save。等待一段时间后，刷新页面，就会显示你的vuepress已经部署成功。
-
-
-## 参考
-vuepress官方文档：[https://vuepress.vuejs.org/zh/guide/getting-started.html](https://vuepress.vuejs.org/zh/guide/getting-started.html)
