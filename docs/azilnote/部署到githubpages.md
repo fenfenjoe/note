@@ -4,26 +4,25 @@ title: 部署到服务器
 
 # 在Github Pages中部署你的博客
 
-0.优缺点
-
+## 将博客部署到github pages的优缺点  
 优点：免费、提交文章后自动部署（CI/CD）    
 缺点：需要科学上网、国内无法备案，无法使用国内CDN  
 
 
-
+## 部署步骤
 1.安装Git
 
 略
 
 
-11.在博客项目的根目录创建.github/workflows目录，在里面创建CI.yml文件（名称任意命名，但后缀一定要.yml）
+2.在博客项目的根目录创建.github/workflows目录，在里面创建CI.yml文件（名称任意命名，但后缀一定要.yml）
 ```
 .github
   - workflows
     CI.yml  
 ```
 
-2.CI.yml文件内容如下：
+CI.yml文件内容如下：
 ```yaml
 name: A TO A:GH_PAGES
 on: [push]
@@ -38,7 +37,7 @@ jobs:
         uses: jenkey2011/vuepress-deploy@master
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TARGET_REPO: fenfenjoe/note # 你的仓库名称
+          TARGET_REPO: ***/note # 你的仓库名称
           TARGET_BRANCH: gh_pages
           BUILD_SCRIPT: npm install && npm run docs:build
           BUILD_DIR: docs/.vuepress/dist/
@@ -53,7 +52,7 @@ jobs:
 4.创建本地仓库，并添加远程仓库
 ```
 git init  
-git remote add origin git@github.com:fenfenjoe/note.git  
+git remote add origin git@github.com:***/note.git  
 ```
 
 

@@ -58,7 +58,7 @@ const navs =
    },
    {
       text: 'PYTHON',
-      link: '/python/'
+      items: []
    },
    {
       text: '数据库',
@@ -79,11 +79,11 @@ const navs =
    },
    {
       text: '前端',
-      link: '/frontend/' //默认跳转到READMD.md
+      items: []
    },
    {
       text: '运维',
-      link: '/devops/' //默认跳转到READMD.md
+      items: []
    }
   ]
  },
