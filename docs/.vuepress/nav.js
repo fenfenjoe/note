@@ -15,19 +15,19 @@ const navs =
       },
       {
         text: 'spring framework',
-        link: '/java/spring/springframework/'
+        link: '/java/spring/springframework'
       },
       {
         text: 'spring boot',
-        link: '/java/spring/springboot/'
+        link: '/java/spring/springboot'
       },
       {
         text: 'spring cloud alibaba',
-        link: '/java/spring/springcloudAlibaba/'
+        link: '/java/spring/springcloudAlibaba'
       },
       {
         text: 'spring cloud netflix',
-        link: '/java/spring/springcloudNetflix/'
+        link: '/java/spring/springcloudNetflix'
       }
     ]
    },
