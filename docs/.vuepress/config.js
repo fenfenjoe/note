@@ -15,8 +15,8 @@ module.exports = {
   themeConfig: {
       lastUpdated: '最近更新时间', //文章添加最近更新时间
       logo: '/images/favicon.ico', //导航栏logo
-      nav: nav   //导航配置见nav.js
-//      sidebar: sidebar //侧边栏配置见sidebar.js
+//      nav: nav   //导航配置见nav.js
+      sidebar: sidebar //侧边栏配置见sidebar.js
 //      ,sidebarDepth: 0
   },
   plugins:[
