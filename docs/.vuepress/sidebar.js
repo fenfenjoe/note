@@ -34,7 +34,7 @@ const sidebar = {
       '矩阵',
       '向量'
      ]
-    },
+    }
 ],
 '/designPattern/':[
     {
