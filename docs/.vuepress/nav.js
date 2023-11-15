@@ -41,10 +41,6 @@ const navs =
     ]
    },
    {
-      text: 'PYTHON',
-      items: []
-   },
-   {
       text: '数据库',
       items: [
          {
@@ -60,14 +56,6 @@ const navs =
    {
       text: '设计模式',
       link: '/designPattern/' //默认跳转到READMD.md
-   },
-   {
-      text: '前端',
-      items: []
-   },
-   {
-      text: '运维',
-      items: []
    }
   ]
  },
