@@ -28,7 +28,7 @@ const navs =
       {
         text: 'spring cloud netflix',
         link: '/java/spring/springcloudNetflix/'
-      },
+      }
     ]
    },
    {
@@ -113,7 +113,7 @@ const navs =
            {
                text: '资源汇总',
                link: '/other/datasource/资源汇总' //默认跳转到READMD.md
-             }
+           }
          ]
      }
    ]
