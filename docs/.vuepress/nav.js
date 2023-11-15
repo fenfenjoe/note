@@ -122,7 +122,7 @@ const navs =
    text: '我也想搭建这样的博客！',
    link: '/azilnote/' //默认跳转到READMD.md
  },
- { text: '前往', link: 'https://www.travellings.cn/go.html' },
+ { text: '前往', link: 'https://www.travellings.cn/go.html' }
 ];
 
 module.exports = navs;
