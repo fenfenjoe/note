@@ -12,22 +12,6 @@ const navs =
       {
         text: '概述',
         link: '/java/' //默认跳转到READMD.md
-      },
-      {
-        text: 'spring framework',
-        link: '/java/spring/springframework'
-      },
-      {
-        text: 'spring boot',
-        link: '/java/spring/springboot'
-      },
-      {
-        text: 'spring cloud alibaba',
-        link: '/java/spring/springcloudAlibaba'
-      },
-      {
-        text: 'spring cloud netflix',
-        link: '/java/spring/springcloudNetflix'
       }
     ]
    },
