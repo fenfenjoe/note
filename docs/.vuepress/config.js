@@ -7,6 +7,14 @@ module.exports = {
   //base: '/note/',  //基础路径
   head: [
     ['link',{rel: 'icon', href: '/images/favicon.ico'}],  //网站图标
+    [
+      "script",
+      {
+        "data-ad-client": "ca-pub-1290331399413826",
+        async: true,
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      }
+    ]
   ],
   extendMarkdown(md) {
     md.use(require('markdown-it-mathjax3')) //使vuepress支持数学公式
