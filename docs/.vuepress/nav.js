@@ -19,10 +19,6 @@ const navs =
     text: '中间件',
     items:[
      {
-     text: '消息中间件',
-     link: '/mq/' //默认跳转到READMD.md
-     },
-     {
        text: 'Kafka',
        link: '/mq/kafka/' //默认跳转到READMD.md
      },
