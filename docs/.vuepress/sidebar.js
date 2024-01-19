@@ -23,7 +23,23 @@ const sidebar = {
      ]
     }
 ],
-'/azilnote/': 'auto',
+'/azilnote/': [
+  {
+       title: '我也想搭建这样的博客', //一级标题
+       collapsable: false, //是否可折叠
+       children:[
+        '',
+        '初始化项目',
+        '写一篇文章',
+        '侧边栏',
+        '使用emoji',
+        '加入开往',
+        'Vuepress插件',
+        '部署到githubpages',
+        '申请属于自己的域名'
+       ]
+  }
+],
 '/math/线性代数/': [
     {
      title: '线性代数', //一级标题

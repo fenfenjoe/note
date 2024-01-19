@@ -58,15 +58,28 @@ const navs =
  {
     text: '数学',
     items: [
+    {
+        text: '概率论',
+        link: '/math/概率论/'
+    },
      {
         text: '线性代数',
         link: '/math/线性代数/'
-     }
+     },
+     {
+         text: '统计学',
+         link: '/math/统计学/'
+      }
     ]
  },
  {
     text: '量化',
-    link: '/quant/' //默认跳转到READMD.md
+    items: [
+     {
+        text: '金融知识学习',
+        link: '/quant/金融知识学习.md'
+     }
+    ]
  },
  {
    text: '其他',

@@ -1,15 +1,19 @@
 ---
-title: 部署到服务器
+title: 部署到Github Pages服务器
 ---
 
 # 在Github Pages中部署你的博客
 
-## 将博客部署到github pages的优缺点  
+## 优缺点  
 优点：免费、提交文章后自动部署（CI/CD）    
 缺点：需要科学上网、国内无法备案，无法使用国内CDN  
 
 
 ## 部署步骤
+
+0.需要支持科学上网，不然访问[github](www.github.com)可能会超时。  
+
+
 1.安装Git
 
 略
@@ -37,7 +41,7 @@ jobs:
         uses: jenkey2011/vuepress-deploy@master
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TARGET_REPO: ***/note # 你的仓库名称
+          TARGET_REPO: your_account/note # 你的仓库名称
           TARGET_BRANCH: gh_pages
           BUILD_SCRIPT: npm install && npm run docs:build
           BUILD_DIR: docs/.vuepress/dist/

@@ -1,5 +1,6 @@
 ---
 title: 概率论
+sidebar: 'auto'
 ---
 
 # 概率论与数理统计
