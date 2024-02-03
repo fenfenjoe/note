@@ -1,3 +1,7 @@
+<!--
+插件：
+右侧边栏上面，显示个人的微信二维码以及赞赏码
+-->
 <template>
   <div>
     <nav class="right-bar-wrap" v-show="isRightBar">
