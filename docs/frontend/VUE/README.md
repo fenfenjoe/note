@@ -1,15 +1,23 @@
-
-
+---
+title: VUE笔记
+---
 
 
 # VUE笔记
 
-## 关于 javascript的 import、export、require
+## 参考资料
+[VUE官方文档(https://cn.vuejs.org/)](https://cn.vuejs.org/)   
 
 
 
+## 笔记
 
-## var、let、const的区别
+### 关于 javascript的 import、export、require
+
+略
+
+
+### var、let、const的区别
 
 var用于声明变量，且具有”变量提升“的特性，因而不推荐使用。
 

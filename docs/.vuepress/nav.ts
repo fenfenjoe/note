@@ -106,4 +106,5 @@ const navs =
  { text: '前往', link: 'https://www.travellings.cn/go.html' }
 ];
 
-module.exports = navs;
+module.exports = navs;  //CommonJS
+

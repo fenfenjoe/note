@@ -1,10 +1,9 @@
 const plugins = [
   [
     {
-      // 右边固定栏
       name: 'page-plugin',
       globalUIComponents: [
-        'global-RightBar',
+        'global-RightBar'  // 右边固定栏
       ],
     },
   ],
