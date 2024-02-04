@@ -33,6 +33,8 @@ const sidebar = {
         '写一篇文章',
         '侧边栏',
         '使用emoji',
+        '在文章中画流程图',
+        '在文章中画函数图',
         '加入开往',
         'Vuepress插件',
         '部署到githubpages',
