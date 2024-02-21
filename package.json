@@ -11,14 +11,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "plotly.js-dist-min": "^2.29.0",
-    "vue-template-compiler": "^2.7.14",
-    "vuepress": "^1.9.9"
+    "vue-template-compiler": "^2.7.14"
   },
   "devDependencies": {
+    "@vuepress/bundler-vite": "^2.0.0-rc.7",
     "@vuepress/plugin-back-to-top": "^1.9.9",
     "@vuepress/plugin-medium-zoom": "^1.9.9",
+    "@vuepress/theme-default": "^2.0.0-rc.14",
+    "katex": "^0.16.9",
     "markdown-it": "^13.0.2",
-    "markdown-it-mathjax3": "^4.3.2"
+    "markdown-it-mathjax3": "^4.3.2",
+    "vuepress": "^2.0.0-rc.7",
+    "vuepress-plugin-md-enhance": "^2.0.0-rc.24"
   }
 }
