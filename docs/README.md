@@ -1,18 +1,7 @@
-# 使用指南
-
-
-## 启动项目
-
-启动：
-```bash
-npm run docs:dev
-```
-
-访问：localhost:8080/note/
-
-
-
-## 参考
-
-vuepress官方文档：https://vuepress.vuejs.org/zh/  
-
+---
+home: true
+heroImage: /images/hero.jpg
+heroText: 粉粉蕉的笔记本
+tagline:  编程、数学、量化
+footer: MIT Licensed | Copyright © 2018-present Azil Dong
+---
