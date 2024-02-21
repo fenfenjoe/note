@@ -39,6 +39,10 @@ module.exports = myModule;
 ```
 
 
+略
+
+
+### var、let、const的区别
 ES6规范下：  
 
 【导出模块】  
