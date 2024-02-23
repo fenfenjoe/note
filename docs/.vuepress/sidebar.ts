@@ -4,12 +4,12 @@ export const sidebar = {
             text: '', //一级标题
             collapsible: false, //是否可折叠
             children: [
-                '',   //README.md
-                '安装&项目结构',
-                'Redis_API',
-                'Redis数据结构',
-                'Redis使用场景',
-                'Redis其他'
+                {text:'概述',link:'/database/redis/README.md'},   //README.md
+                {text:'安装&项目结构',link:'/database/redis/安装&项目结构.md'},
+                {text:'API',link:'/database/redis/Redis_API.md'},
+                {text:'数据结构',link:'/database/redis/Redis数据结构.md'},
+                {text:'使用场景',link:'/database/redis/Redis使用场景.md'},
+                {text:'其他',link:'/database/redis/Redis其他.md'}
             ]
         }
     ],
@@ -18,8 +18,8 @@ export const sidebar = {
             text: '', //一级标题
             collapsible: false, //是否可折叠
             children: [
-                '',   //README.md
-                'SQL速查'
+                {text:'概述',link:'/database/mysql/README.md'},   //README.md
+                {text:'SQL速查',link:'/database/mysql/SQL速查.md'}
             ]
         }
     ],
@@ -28,17 +28,28 @@ export const sidebar = {
             text: '我也想搭建这样的博客', //一级标题
             collapsible: false, //是否可折叠
             children: [
-                '',
-                '初始化项目',
-                '写一篇文章',
-                '侧边栏',
-                '使用emoji',
-                '在文章中画流程图',
-                '在文章中画函数图',
-                '加入开往',
-                'Vuepress插件',
-                '部署到githubpages',
-                '申请属于自己的域名'
+                {text:'概述',link:'/azilnote/README.md'},
+                {
+                    text:'Vuepress1.x',
+                    children:[
+                        {text:'初始化项目',link:'/azilnote/初始化项目.md'},
+                        {text:'写一篇文章',link:'/azilnote/写一篇文章.md'},
+                        {text:'侧边栏',link:'/azilnote/侧边栏.md'},
+                        {text:'使用emoji',link:'/azilnote/使用emoji.md'},
+                        {text:'在文章中画流程图',link:'/azilnote/在文章中画流程图.md'},
+                        {text:'在文章中画函数图',link:'/azilnote/在文章中画函数图'.md},
+                        {text:'加入开往',link:'/azilnote/加入开往'.md},
+                        {text:'Vuepress插件',link:'/azilnote/Vuepress插件'.md},
+                        {text:'部署到githubpages',link:'/azilnote/部署到githubpages'.md},
+                        {text:'申请属于自己的域名',link:'/azilnote/申请属于自己的域名'.md},
+                        {text:'迁移至Vuepress2.0',link:'/azilnote/迁移至v2.x'.md}
+                    ]
+                },
+                {
+                    text:'Vuepress2.x',
+                    children:[
+                    ]
+                },
             ]
         }
     ],
