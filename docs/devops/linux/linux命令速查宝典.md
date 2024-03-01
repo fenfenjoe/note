@@ -1,5 +1,6 @@
 ---
 title: Linux运维速查宝典
+sidebar: 'auto'
 ---
 
 
@@ -131,7 +132,7 @@ source ./test.sh
 sudo vim /usr/bin/yum
 ```
 #### 文件操作：touch、rm、mkdir、vim、cp、mv
-
+```bash
 touch <filename>   
 创建文件
 
@@ -152,7 +153,7 @@ cp -r <source> <target>
 
 mv <source> <target>  
 移动文件/文件重命名
-
+```
 
 #### 在后台运行脚本：nohup
 

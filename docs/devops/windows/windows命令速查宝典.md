@@ -1,5 +1,6 @@
 ---
 title: Windows命令速查宝典
+sidebar: 'auto'
 ---
 
 # Windows命令速查宝典
