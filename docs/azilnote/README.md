@@ -10,14 +10,16 @@ title: 概述
 
 > 类似的框架还有：mdbook、mkdocs、hexo等。熟悉搭建步骤后可以尝试使用不同的框架！
 
-![mdbook：https://llever.com/mdBook-zh/](/images/mx_screencap_20240222_103619.png)  
+![【mdbook】https://llever.com/mdBook-zh/](/images/mx_screencap_20240222_103619.png)  
 
-![mkdocs：https://markdown-docs-zh.readthedocs.io/zh-cn/latest/](/images/mx_screencap_20240222_103750.png)
+![【mkdocs】https://markdown-docs-zh.readthedocs.io/zh-cn/latest/](/images/mx_screencap_20240222_103750.png)
 
-![hexo-安知鱼主题：https://docs.anheyu.com](/images/mx_screencap_20240222_103126.png)  
+![【hexo-安知鱼主题】https://docs.anheyu.com](/images/mx_screencap_20240222_103126.png)  
 
 
-本教程用的还是 vuepress 1.x版本的，现时为止vuepress已经出到2.x了，详情见官方文档：<https://v1.vuepress.vuejs.org/zh/>
+本教程~~用的还是 vuepress 1.x版本的，现时为止vuepress已经出到2.x了~~已经迁移到 vuepress2.x版本了。
+
+官方文档：<https://v2.vuepress.vuejs.org/zh/>
 
 非常建议大家学习Markdown，用来建立自己的笔记系统！学会后大大提高记笔记的积极性！  
 

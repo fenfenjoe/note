@@ -37,12 +37,12 @@ export const sidebar = {
                         {text:'侧边栏',link:'/azilnote/侧边栏.md'},
                         {text:'使用emoji',link:'/azilnote/使用emoji.md'},
                         {text:'在文章中画流程图',link:'/azilnote/在文章中画流程图.md'},
-                        {text:'在文章中画函数图',link:'/azilnote/在文章中画函数图'.md},
-                        {text:'加入开往',link:'/azilnote/加入开往'.md},
-                        {text:'Vuepress插件',link:'/azilnote/Vuepress插件'.md},
-                        {text:'部署到githubpages',link:'/azilnote/部署到githubpages'.md},
-                        {text:'申请属于自己的域名',link:'/azilnote/申请属于自己的域名'.md},
-                        {text:'迁移至Vuepress2.0',link:'/azilnote/迁移至v2.x'.md}
+                        {text:'在文章中画函数图',link:'/azilnote/在文章中画函数图.md'},
+                        {text:'加入开往',link:'/azilnote/加入开往.md'},
+                        {text:'Vuepress插件',link:'/azilnote/Vuepress插件.md'},
+                        {text:'部署到githubpages',link:'/azilnote/部署到githubpages.md'},
+                        {text:'申请属于自己的域名',link:'/azilnote/申请属于自己的域名.md'},
+                        {text:'迁移至Vuepress2.0',link:'/azilnote/迁移至v2.x.md'}
                     ]
                 },
                 {

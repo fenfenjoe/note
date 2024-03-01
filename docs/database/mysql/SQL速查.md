@@ -10,7 +10,7 @@ title:SQL速查
 ```sql
 select 
 teacher_name,
-GROUP_CONCAT(student_name,',') students
+GROUP_CONCAT(student_name) students
 from student
 group by teacher_name
 ```

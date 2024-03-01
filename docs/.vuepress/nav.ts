@@ -50,7 +50,36 @@ export const navs =
             {
                 text: '设计模式',
                 link: '/designPattern/' //默认跳转到READMD.md
-            }
+            },
+             {
+                 text: '运维',
+                 children: [
+                    {
+                        text: 'linux命令速查',
+                        link: '/devops/linux/linux命令速查宝典.md'
+                    },
+                    {
+                        text: 'windows命令速查',
+                        link: '/devops/windows/windows命令速查宝典.md'
+                    },
+                    {
+                        text: 'Docker笔记',
+                        link: '/devops/docker/Docker笔记.md'
+                    },
+                    {
+                        text: 'kubernetes学习笔记',
+                        link: '/devops/kubernetes/kubernetes学习笔记.md'
+                    },
+                    {
+                        text: 'kubernetes实操笔记',
+                        link: '/devops/kubernetes/kubernetes实操笔记.md'
+                    },
+                    {
+                        text: '运维工具大全',
+                        link: '/devops/运维工具大全.md'
+                    }
+                 ]
+             }
         ]
     },
     {

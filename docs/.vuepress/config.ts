@@ -26,7 +26,8 @@ export default defineUserConfig({
     plugins:[
         mdEnhancePlugin({
             katex: true,
-            chart: true
+            chart: true,
+            figure: true //图片显示标题
         }) //markdown功能增强插件
     ]
 })
