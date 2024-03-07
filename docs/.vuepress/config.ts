@@ -25,9 +25,10 @@ export default defineUserConfig({
     ],
     plugins:[
         mdEnhancePlugin({
-            katex: true,
-            chart: true,
-            figure: true //图片显示标题
+            katex: true,  //数学公式
+            chart: true,  //各种统计图
+            figure: true, //图片显示标题
+            mermaid: true, //各种流程图
         }) //markdown功能增强插件
     ]
 })

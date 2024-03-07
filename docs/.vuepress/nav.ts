@@ -121,7 +121,11 @@ export const navs =
                     {
                         text: '资源汇总',
                         link: '/other/datasource/资源汇总' //默认跳转到READMD.md
-                    }
+                    },
+                     {
+                         text: '软考',
+                         link: '/other/softtest/软考' //默认跳转到READMD.md
+                     }
                 ]
             }
         ]
