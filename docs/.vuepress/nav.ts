@@ -112,22 +112,26 @@ export const navs =
         text: '其他',
         children: [
             {
-                text: '获取信息的渠道',
-                children: [
+                text: 'RSS',
+                link: '/other/datasource/RSS' //默认跳转到READMD.md
+            },
+            {
+                text: '资源汇总',
+                link: '/other/datasource/资源汇总' //默认跳转到READMD.md
+            },
+             {
+                 text: '软考',
+                 link: '/other/softtest/软考' //默认跳转到READMD.md
+             },
+             {
+                  text: '健身',
+                  children:[
                     {
-                        text: 'RSS',
-                        link: '/other/datasource/RSS' //默认跳转到READMD.md
-                    },
-                    {
-                        text: '资源汇总',
-                        link: '/other/datasource/资源汇总' //默认跳转到READMD.md
-                    },
-                     {
-                         text: '软考',
-                         link: '/other/softtest/软考' //默认跳转到READMD.md
+                         text: '拉伸',
+                         link: '/gym/拉伸.md' //默认跳转到READMD.md
                      }
-                ]
-            }
+                  ]
+              },
         ]
     },
     {

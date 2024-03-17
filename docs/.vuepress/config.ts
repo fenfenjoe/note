@@ -8,6 +8,7 @@ import { navs } from './nav'
 //import { lastUpdated } from '@vuepress/last-updated'
 //import { pluginMediumZoom } from '@vuepress/plugin-medium-zoom'
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance"
+import { componentsPlugin } from "vuepress-plugin-components"
 
 export default defineUserConfig({
     bundler: viteBundler(),
@@ -29,6 +30,11 @@ export default defineUserConfig({
             chart: true,  //各种统计图
             figure: true, //图片显示标题
             mermaid: true, //各种流程图
-        }) //markdown功能增强插件
+        }), //markdown功能增强插件
+        componentsPlugin({
+            components:[
+                "BiliBili",
+            ]
+        })
     ]
 })
