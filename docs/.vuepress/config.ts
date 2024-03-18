@@ -30,6 +30,9 @@ export default defineUserConfig({
             chart: true,  //各种统计图
             figure: true, //图片显示标题
             mermaid: true, //各种流程图
+            alert: true, //GFM提示功能
+            gfm: true, //github flavored Markdown
+            hint: true,
         }), //markdown功能增强插件
         componentsPlugin({
             components:[
