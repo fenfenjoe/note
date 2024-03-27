@@ -77,7 +77,11 @@ export const navs =
                     {
                         text: '运维工具大全',
                         link: '/devops/运维工具大全.md'
-                    }
+                    },
+                     {
+                         text: 'IDEA快捷键大全+动图演示',
+                         link: '/devops/ide/IDEA快捷键大全.md'
+                     }
                  ]
              }
         ]
@@ -116,7 +120,7 @@ export const navs =
                 link: '/other/datasource/RSS' //默认跳转到READMD.md
             },
             {
-                text: '资源汇总',
+                text: '资源导航',
                 link: '/other/datasource/资源汇总' //默认跳转到READMD.md
             },
              {
@@ -138,7 +142,7 @@ export const navs =
         text: '我也想搭建这样的博客！',
         link: '/azilnote/' //默认跳转到READMD.md
     },
-   { text: '🚋前往', link: 'https://www.travellings.cn/go.html' }
+   { text: '🚋开往', link: 'https://www.travellings.cn/go.html' }
 ];
 
 // module.exports = navs;  //CommonJS
