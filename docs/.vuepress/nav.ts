@@ -95,20 +95,29 @@ export const navs =
             },
             {
                 text: '线性代数',
-                link: '/math/线性代数/'
+                link: '/math/xsds/',
+                children: [
+                    {
+                        text: '行列式',
+                        link: '/math/xsds/行列式.md'
+                    },
+                    {
+                        text: '矩阵',
+                        link: '/math/xsds/矩阵.md'
+                    },
+                    {
+                        text: '向量',
+                        link: '/math/xsds/向量.md'
+                    },
+                    {
+                        text: '线性方程组',
+                        link: '/math/xsds/线性方程组.md'
+                    },
+                ]
             },
             {
                 text: '统计学',
                 link: '/math/统计学/'
-            }
-        ]
-    },
-    {
-        text: '量化',
-        children: [
-            {
-                text: '金融知识学习',
-                link: '/quant/金融知识学习.md'
             }
         ]
     },
@@ -136,6 +145,10 @@ export const navs =
                      }
                   ]
               },
+              {
+                   text: '装修攻略',
+                   link: '/decorate/' //默认跳转到READMD.md
+              }
         ]
     },
     {

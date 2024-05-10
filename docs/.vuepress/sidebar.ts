@@ -53,15 +53,16 @@ export const sidebar = {
             ]
         }
     ],
-    '/math/线性代数/': [
+    '/math/xsds/': [
         {
             text: '线性代数', //一级标题
             collapsible: false, //是否可折叠
             children: [
-                {text:'行列式',link:'/math/线性代数/行列式.md'},
-                {text:'矩阵',link:'/math/线性代数/矩阵.md'},
-                {text:'向量',link:'/math/线性代数/向量.md'},
-                {text:'线性方程组',link:'/math/线性代数/线性方程组.md'}
+                {text:'概述',link:'/math/xsds/README.md'},
+                {text:'行列式',link:'/math/xsds/行列式.md'},
+                {text:'矩阵',link:'/math/xsds/矩阵.md'},
+                {text:'向量',link:'/math/xsds/向量.md'},
+                {text:'线性方程组',link:'/math/xsds/线性方程组.md'}
             ]
         }
     ],
@@ -110,7 +111,19 @@ export const sidebar = {
                 {text:'解释器模式',link:'/designPattern/解释器模式.md'}
             ]
         }
-    ]
+    ],
+    '/decorate/': [
+            {
+                text: '装修攻略', //一级标题
+                collapsible: false, //是否可折叠
+                children: [
+                    {text:'简述',link:'/decorate/README.md'},
+                    {text:'板材选择',link:'/decorate/板材.md'},
+                    {text:'装修风格',link:'/decorate/装修风格.md'},
+                    {text:'门窗',link:'/decorate/门窗.md'}
+                ]
+            }
+        ]
 };
 
 // module.exports = sidebar; //CommonJS

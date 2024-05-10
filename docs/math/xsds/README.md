@@ -1,5 +1,6 @@
 ---
-title: 概述
+title: 线性代数
+sidebar: 'auto'
 ---
 
 # 线性代数
