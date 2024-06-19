@@ -12,6 +12,19 @@ title:SQL性能优化
 explain
 select * from student where name like '%haha%'
 ```
+执行计划示例：
+
+| id  | select_type | table      | type   | possible_keys                                                                                              | key                             | key_len | ref                       | rows | Extra                                                     |
+|-----|-------------|------------|--------|------------------------------------------------------------------------------------------------------------|---------------------------------|---------|---------------------------|------|-----------------------------------------------------------|
+| 1   | PRIMARY     | <derived2> | ALL    |                                                                                                            |                                 | 2934    |                           |      |                                                           |
+| 1   | PRIMARY     | rll        | eq_ref | PRIMARY                                                                                                    |                                 | 8       | tmp.LINE_LOCATION_ID      | 1    |                                                           |
+| 1   | PRIMARY     | rl         | eq_ref | PRIMARY                                                                                                    |                                 | 8       | srm_price.rll.PO_LINE_ID  | 1    |                                                           | 
+| 1   | PRIMARY     | rh         | eq_ref | PRIMARY                                                                                                    |                                 | 8       | srm_price.rl.PO_HEADER_ID | 1    | Using where                                               |
+| 2   | DERIVED     | h          | ref    | PRIMARY, srm_po_headers_n1                                                                                 | srm_po_headers_n1               | 42      | const                     | 326  | Using where; Using index; Using temporary; Using filesort |
+| 2   | DERIVED     | l          | ref    | PRIMARY, srm_po_lines_n1                                                                                   | srm_po_lines_n1                 | 8       | srm_price.h.PO_HEADER_ID  | 3    | Using where; Using index                                  |
+| 2   | DERIVED     | ll         | ref    | PRIMARY, srm_po_line_locations_102000_n3, srm_po_line_locations_102000_n6, srm_po_line_locations_102000_n7 | srm_po_line_locations_102000_n3 | 8       | srm_price.l.PO_LINE_ID    | 3    | Using index condition; Using where                        |
+
+
 
 下面我们看看执行计划有哪些内容：
  
@@ -58,6 +71,8 @@ select * from student where student_id = 1;
 select * from student left join teacher on student.teacher_id = teacher.teacher_id;
 ```
 
+* index: 用到了覆盖索引，即需要查询的数据可以直接通过索引表获取，而不需要访问实际的数据行。  
+
 * ref: 查询条件是 **普通索引**，可能对应多条记录  
 ```sql
 select * from student left join teacher on student.teacher_name = teacher.teacher_name;
@@ -69,8 +84,6 @@ select * from student where student_id > 1;  -- 唯一索引，也会触发范�
 select * from student where student_name > 'John'; -- student_name有一个普通索引，此时也是range
 select * from student where age > 10; -- age没索引，此时就不是range，而是ALL（全表扫描）
 ```
-
-* index: 
 
 * ALL: 全表扫描（完全没走索引，一条一条地查）
 
