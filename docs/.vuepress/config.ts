@@ -27,7 +27,7 @@ export default defineUserConfig({
     plugins:[
         mdEnhancePlugin({
             katex: true,  //数学公式
-            chart: true,  //各种统计图
+            echarts: true,  //各种统计图
             figure: true, //图片显示标题
             mermaid: true, //各种流程图
             alert: true, //GFM提示功能
