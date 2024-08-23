@@ -12,9 +12,17 @@ export const navs =
                 text: 'JAVA',
                 children: [
                     {
-                        text: '概述',
-                        link: '/java/' //默认跳转到READMD.md
-                    }
+                        text: '代码笔记',
+                        link: '/java/实战/开发笔记.md' //默认跳转到READMD.md
+                    },
+                     {
+                         text: 'Java8实战',
+                         link: '/java/实战/Java8实战.md'
+                     },
+                   {
+                       text: '分布式事务实战（Seata）',
+                       link: '/java/常用框架/seata.md'
+                   }
                 ]
             },
             {
