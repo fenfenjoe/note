@@ -24,7 +24,7 @@ RSS是一个“订阅工具”。你可以用RSS订阅你感兴趣的内容（Tw
 * RSSHub（生成RSS源开源工具）
 
  
-### 什么是RSS源？
+### RSS源
 
 RSS源是一个URL链接。格式如下：
 ```url
@@ -44,6 +44,20 @@ https://rsshub.app/bilibili/user/video/50329118
 > * ~~公众号~~（因平台的管制，目前比较难。见：https://www.runningcheese.com/rss-subscriptions 的介绍）
 > * 新闻网站
 > * ...
+
+### RSS阅读器
+
+可供选择的RSS阅读器：
+* Feedly（在线RSS阅读器，需要翻墙）：https://feedly.com/
+* InoReader（国内版）：https://www.innoreader.com/
+* TinyTinyRSS
+* FreshRSS
+* Miniflux
+
+### RSSHub
+
+<https://docs.rsshub.app/>
+
 
 &nbsp;  
 &nbsp;  

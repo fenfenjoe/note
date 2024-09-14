@@ -6,8 +6,8 @@ sidebar: 'auto'
 
 # Linux运维速查宝典
 
-### 常用命令
-#### PS ：查看当前进程状态
+## 常用命令
+### PS ：查看当前进程状态
 ```
 ps aux|grep ktin 
 //查看包含"ktin"字眼的进程的信息，其中第2列为PID
@@ -15,10 +15,10 @@ ps aux|grep ktin
 ps -ef|grep srm-esb-*
 //查看以srm-esb-开头的进程的信息
 ```
-#### DF：查看磁盘占用情况
+### DF：查看磁盘占用情况
 df -h
 
-#### TOP ：查看负载、查看内存使用情况、查看进程
+### TOP ：查看负载、查看内存使用情况、查看进程
 
 示例：
 ```
@@ -62,8 +62,8 @@ MiB Swap: 2048.0 total, 2048.0 free, 0.0 used. 4878.4 avail Mem
 23128 alvin 20 0 16836 5636 4284 S 0.0 0.1 0:00.03 zsh
 ```
 
-#### NETSTAT：查看端口占用情况
-```
+### NETSTAT：查看端口占用情况
+```bash
 #查看某个端口
 lsof -i:8080
 
@@ -71,53 +71,62 @@ lsof -i:8080
 netstat -tunlp
 ```
 
-#### FIND：文件查找
+### FIND：文件查找
+```bash
+# 默认从当前目录查找；查找时默认包括子目录；
 
-默认从当前目录查找；查找时默认包括子目录；
-
-1.按文件名查找  
+# 1.按文件名查找  
 find test.txt  
---在当前目录下查找test.txt文件  
+# 在当前目录下查找test.txt文件  
 find / -name httpd.conf  
---在根目录下查找文件httpd.conf  
+# 在根目录下查找文件httpd.conf  
 find /etc -name '\*httpd\*'  
---在etc目录下查找名字含有"httpd"的文件
+# 在etc目录下查找名字含有"httpd"的文件
 
-2.**查询大文件**  
+# 2.**查询大文件**  
 find . -type f -size +500M  
---找出目录下（包括子目录）所有大小大于500M的文件
+# 找出目录下（包括子目录）所有大小大于500M的文件
+```
 
-#### CURL：文件上传、下载
+### CURL：文件上传、下载
 
-#### VIM：文本编辑
+### VIM：文本编辑
 
-***i*** #进入编辑模式  
-编辑模式下：  
-***ESC*** #退出编辑模式  
-***x***         #删除后面的字符  
-***X***          #删除前面的字符  
-***u***          #回滚
+```bash
+vim systemOut.log
+```
+i #进入编辑模式  
+
+编辑模式下：
+* ESC #退出编辑模式
+* x #删除后面的字符
+* X #删除前面的字符
+* u #回滚
 
 非编辑模式下：  
-***:wq*** #保存并退出  
-***:q!***   #直接退出不保存  
-***:w [filename]*** #另存为  
-***/ [关键字]***        #查找关键字（然后输入n搜索下一个）  
-***Ctrl+F***  #下一页  
-***Ctrl+B***  #上一页
+* :wq #保存并退出  
+* :q! #直接退出不保存  
+* :w [filename] #另存为  
+* / [关键字] #查找关键字（然后输入n搜索下一个）  
+* Ctrl+F #下一页  
+* Ctrl+B #上一页
 
 
-#### HOSTNAMECTL：查看Linux发行版本
-#### GREP：全文检索
+### HOSTNAMECTL：查看Linux发行版本
+
+### GREP：全文检索
+```bash
 grep --help   
-查看帮助
+# 查看帮助
 
 grep -lr 'string' /etc/  
--l: 找出含有该字符串的文件  
--r: 同时从子目录查找  
--i: 忽略大小写
+# -l: 找出含有该字符串的文件  
+# -r: 同时从子目录查找  
+# -i: 忽略大小写
+```
 
-#### SOURCE:执行某段shell脚本
+
+### SOURCE:执行某段shell脚本
 假设有以下shell脚本：
 ```bash
 # test.sh
@@ -127,35 +136,36 @@ echo 'hello world'
 ```bash
 source ./test.sh
 ```
-#### SUDO：以管理员身份运行命令
+### SUDO：以管理员身份运行命令
 ```bash
+# 以管理员身份浏览yum文件
 sudo vim /usr/bin/yum
 ```
-#### 文件操作：touch、rm、mkdir、vim、cp、mv
+### 文件操作：touch、rm、mkdir、vim、cp、mv
 ```bash
 touch <filename>   
-创建文件
+# 创建文件
 
 mkdir <uriname>  
-创建目录
+# 创建目录
 
 rm -f <filename>  
-强行删除文件或目录（不包括子目录）
+# 强行删除文件或目录（不包括子目录）
 
 rm -rf <filename>  
-强行删除文件或目录（包括子目录）
+# 强行删除文件或目录（包括子目录）
 
 cp <source> <target>  
-拷贝文件
+# 拷贝文件
 
 cp -r <source> <target>  
-拷贝目录
+# 拷贝目录
 
 mv <source> <target>  
-移动文件/文件重命名
+# 移动文件/文件重命名
 ```
 
-#### 在后台运行脚本：nohup
+### 在后台运行脚本：nohup
 
 nohup 英文全称 no hang up（不挂起），用于在系统后台不挂断地运行命令，退出终端不会影响程序的运行。  
 nohup 命令，在默认情况下（非重定向时），会输出一个名叫 nohup.out 的文件到当前目录下，如果当前目录的 nohup.out 文件不可写，输出重定向到 $HOME/nohup.out 文件中。
@@ -177,7 +187,7 @@ nohup java -jar Test.jar > Test_$(date +%Y-%m-%d).log &
 nohup ./test.sh > out.txt 2>&1 &
 ```
 
-#### yum、rpm、apt-get：下载、安装、卸载软件
+### yum、rpm、apt-get：下载、安装、卸载软件
 
 **Debian系：（Debian, Ubuntu, Xandros, Linspire）**
 
@@ -219,7 +229,7 @@ yum list [package-name] --showduplicates | sort -r
 #下载并安装
 yum install [package-name]
 ```
-#### ROUTE：查看Linux的路由表
+### ROUTE：查看Linux的路由表
 ```bash
 [root@VM_139_74_centos ~]# route
 Kernel IP routing table
@@ -234,11 +244,11 @@ link-local      0.0.0.0         255.255.0.0     U     1002   0        0 eth0
 172.20.0.0      0.0.0.0         255.255.0.0     U     0      0        0 br-7485db25f958
 ```
 
-#### firewalld：防火墙操作
+### firewalld：防火墙操作
 
-firewall-cmd --version
+firewall-cmd--version
 
-#### ENV：查看环境变量
+### ENV：查看环境变量
 ```bash
 #显示所有环境变量
 $ env
@@ -248,7 +258,7 @@ $ env |grep JAVA_HOME
 $ echo $JAVA_HOME
 ```
 
-#### CAT:文件内容检索、修改
+### CAT:文件内容检索、修改
 ```bash
 #查看text.txt的所有内容
 cat text.txt 
@@ -281,7 +291,7 @@ cat -n text.txt|tail -n +100|more
 
 ```
 
-#### LESS:滚动查看文件
+### LESS:滚动查看文件
 ```bash
 #进入并查看文件
 LESS text.txt
@@ -298,7 +308,7 @@ q    退出less模式
 
 ```
 
-#### TAIL:查看日志
+### TAIL:查看日志
 ```bash
 #滚动式查看日志
 tail -f ./2022-10-10.log
@@ -310,7 +320,7 @@ tail -n 200 ./2022-10-10.log
 tail -f ./2022-10-10.log | grep 'ERROR'
 ```
 
-### Linux文件系统结构
+## Linux文件系统结构
 ***/*** ：根目录  
 ***/usr/bin*** ：系统安装的可执行程序（如ping、ls、man等）  
 ***/usr/local*** ：用户级应用（如TOMCAT、MYSQL），类比C:/Progrem Files/  
@@ -319,7 +329,7 @@ tail -f ./2022-10-10.log | grep 'ERROR'
 ***/etc*** ：系统的配置文件（包括host文件）
 
 
-### Shell脚本语法
+## Shell脚本语法
 
 ```shell
 #!/bin/bash
@@ -356,7 +366,7 @@ echo `pwd` #显示当前目录的路径
 
 ```
 
-### 查看系统配置
+## 查看系统配置
 
 
 ```

@@ -22,6 +22,10 @@ export const navs =
                    {
                        text: '分布式事务实战（Seata）',
                        link: '/java/常用框架/seata.md'
+                   },
+                   {
+                      text: '模板引擎（FreeMarker）',
+                      link: '/java/常用框架/freemarker.md'
                    }
                 ]
             },
