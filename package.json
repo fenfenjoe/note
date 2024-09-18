@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "caniuse-lite": "^1.0.30001660",
     "vue-template-compiler": "^2.7.14"
   },
   "devDependencies": {
