@@ -1,13 +1,25 @@
 # Elastic Search学习笔记
 
 ### 参考
-Elasticsearch－基础介绍及索引原理分析 [https://www.cnblogs.com/dreamroute/p/8484457.html](https://www.cnblogs.com/dreamroute/p/8484457.html)
+Elasticsearch－基础介绍及索引原理分析 [https://www.cnblogs.com/dreamroute/p/8484457.html](https://www.cnblogs.com/dreamroute/p/8484457.html)  
+ElasticSearch官方文档<https://www.elastic.co/guide/cn/elasticsearch/guide/2.x/intro.html>  
 
 ### 什么是ES
 
 Elastic Search，一个分布式、可扩展的实时搜索和分析引擎；
 一个文档型数据库，数据以JSON作为文档序列化的格式；
 特点是检索数据的速度快，使用倒排索引而不是B+树索引（关系型数据库）；
+
+
+ES中的概念  
+
+| Elasticsearch | 说明                                                                                  |
+|---------------|-------------------------------------------------------------------------------------|
+| 索引（Index）     | 等于RDBMS中**数据库（Database）** 的概念，实质是一个文档的集合。                                           |
+| 类型（Type）      | 等于RDBMS中**表（Table）** 的概念，指在一个索引中，可以索引不同类型的文档，如用户数据、博客数据。从6.0.0 版本起已废弃，一个索引中只存放一类数据。 |
+| 映射（Mapping）   | 等于RDBMS中**表结构（Schema）** 的概念                                                         |
+| 文档（Doc）       | 等于RDBMS中**行（Row）** 的概念 ，以JSON格式来表示                                                  |
+| 字段（Field）     | 等于RDBMS中**列（Column）** 的概念 ，以JSON格式来表示                                               |
 
 ### 为什么用ES
 
@@ -28,6 +40,69 @@ Elastic Search，一个分布式、可扩展的实时搜索和分析引擎；
     **ElasticHD**
     **Dejavu**
     **Kibana**
+
+### ES索引
+
+#### 创建ES索引
+创建ES索引的请求一般是这样的：
+```bash
+PUT /my_index
+{
+  "mappings":{
+    "dynamic": true,
+    "properties":{
+      "info":{
+        "type":"text",
+        "analyzer":"ik_smart"
+      },
+      "email":{
+        "type": "keyword",
+        "index": false
+      },
+      "name": {
+        "type": "object",
+        "properties": {
+          "firstname": {
+            "type": "keyword"
+          },
+          "lastname": {
+            "type": "keyword"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+- **mappings**:**字段映射**，配置索引里有哪些字段，以及每个字段的属性。
+- **dynamic**:是否可以添加新字段（true(默认)/false/strict）
+  - true:当插入的文档有新字段，会自动创建新字段的映射
+  - false:当插入的文档有新字段，依然会存储下来，但不能作为查询条件
+  - strict:当插入的文档有新字段，抛出异常
+- **type**：字段的数据类型，一般有以下几种常用数据类型
+  - 字符串：text（可分词的文本）、keyword（精确值）
+  - 数值：long、integer、short、byte、double、float
+  - 布尔值：boolean
+  - 日期：date
+  - 对象：object
+- **index**:是否创建索引
+- **analyzer**:分词器，text数据类型字段需要配置
+- **properties**:配置该索引/字段的子字段
+
+
+创建索引后，还有对索引的查看，删除操作（不支持修改）。
+
+#### 查看索引
+```bash
+GET /my_index
+```
+
+#### 删除索引
+```bash
+DELETE /my_index
+```
+
 
 ### 原理
 #### ES存储原理&索引
@@ -318,7 +393,7 @@ curl -X PUT 'localhost:9200/test'
 
 
 
-#### ES API：增删改查语法
+#### ES RESTAPI：增删改查语法
 
 > ES提供RESTful API给用户做数据的增删改查。
 
