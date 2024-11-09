@@ -14,15 +14,15 @@ select * from student where name like '%haha%'
 ```
 执行计划示例：
 
-| id  | select_type | table      | type   | possible_keys                                                                                              | key                             | key_len | ref                       | rows | Extra                                                     |
-|-----|-------------|------------|--------|------------------------------------------------------------------------------------------------------------|---------------------------------|---------|---------------------------|------|-----------------------------------------------------------|
-| 1   | PRIMARY     | <derived2> | ALL    |                                                                                                            |                                 | 2934    |                           |      |                                                           |
-| 1   | PRIMARY     | rll        | eq_ref | PRIMARY                                                                                                    |                                 | 8       | tmp.LINE_LOCATION_ID      | 1    |                                                           |
-| 1   | PRIMARY     | rl         | eq_ref | PRIMARY                                                                                                    |                                 | 8       | srm_price.rll.PO_LINE_ID  | 1    |                                                           | 
-| 1   | PRIMARY     | rh         | eq_ref | PRIMARY                                                                                                    |                                 | 8       | srm_price.rl.PO_HEADER_ID | 1    | Using where                                               |
-| 2   | DERIVED     | h          | ref    | PRIMARY, srm_po_headers_n1                                                                                 | srm_po_headers_n1               | 42      | const                     | 326  | Using where; Using index; Using temporary; Using filesort |
-| 2   | DERIVED     | l          | ref    | PRIMARY, srm_po_lines_n1                                                                                   | srm_po_lines_n1                 | 8       | srm_price.h.PO_HEADER_ID  | 3    | Using where; Using index                                  |
-| 2   | DERIVED     | ll         | ref    | PRIMARY, srm_po_line_locations_102000_n3, srm_po_line_locations_102000_n6, srm_po_line_locations_102000_n7 | srm_po_line_locations_102000_n3 | 8       | srm_price.l.PO_LINE_ID    | 3    | Using index condition; Using where                        |
+| id  | select_type | table    | type   | possible_keys                                                                                              | key                             | key_len | ref                       | rows | Extra                                                     |
+|-----|-------------|----------|--------|------------------------------------------------------------------------------------------------------------|---------------------------------|---------|---------------------------|------|-----------------------------------------------------------|
+| 1   | PRIMARY     | derived2 | ALL    |                                                                                                            |                                 | 2934    |                           |      |                                                           |
+| 1   | PRIMARY     | rll      | eq_ref | PRIMARY                                                                                                    |                                 | 8       | tmp.LINE_LOCATION_ID      | 1    |                                                           |
+| 1   | PRIMARY     | rl       | eq_ref | PRIMARY                                                                                                    |                                 | 8       | srm_price.rll.PO_LINE_ID  | 1    |                                                           | 
+| 1   | PRIMARY     | rh       | eq_ref | PRIMARY                                                                                                    |                                 | 8       | srm_price.rl.PO_HEADER_ID | 1    | Using where                                               |
+| 2   | DERIVED     | h        | ref    | PRIMARY, srm_po_headers_n1                                                                                 | srm_po_headers_n1               | 42      | const                     | 326  | Using where; Using index; Using temporary; Using filesort |
+| 2   | DERIVED     | l        | ref    | PRIMARY, srm_po_lines_n1                                                                                   | srm_po_lines_n1                 | 8       | srm_price.h.PO_HEADER_ID  | 3    | Using where; Using index                                  |
+| 2   | DERIVED     | ll       | ref    | PRIMARY, srm_po_line_locations_102000_n3, srm_po_line_locations_102000_n6, srm_po_line_locations_102000_n7 | srm_po_line_locations_102000_n3 | 8       | srm_price.l.PO_LINE_ID    | 3    | Using index condition; Using where                        |
 
 
 
@@ -52,7 +52,7 @@ table表示正在访问哪个表
 
 这一列表示关联类型或访问类型，即MySQL决定如何查找表中的行，查找数据行记录的大概范围。  
 
-依次从最优到最差分别为：system > const > eq_ref > ref > range > index > ALL  
+依次从最优到最差分别为：```system > const > eq_ref > ref > range > index > ALL  ```
 
 一般来说，得保证查询达到range级别，最好达到ref  
 
@@ -78,7 +78,7 @@ select * from student left join teacher on student.teacher_id = teacher.teacher_
 select * from student left join teacher on student.teacher_name = teacher.teacher_name;
 ```
 
-* range: 范围扫描。查询条件里含 in(),between,>,<,>= 等操作  
+* range: 范围扫描。查询条件里含 in(),between,大于,小于,大于等于 等操作  
 ```sql
 select * from student where student_id > 1;  -- 唯一索引，也会触发范围扫描
 select * from student where student_name > 'John'; -- student_name有一个普通索引，此时也是range

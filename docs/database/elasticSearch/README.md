@@ -107,8 +107,6 @@ DELETE /my_index
 ### 原理
 #### ES存储原理&索引
 
-![7.png](./assets/7.png)
-
 **docid**
 
 ES数据库里的每条记录，都会分配到一个ID，称为doc id。
