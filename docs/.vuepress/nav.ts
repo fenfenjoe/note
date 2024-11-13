@@ -47,7 +47,11 @@ export const navs =
                     {
                         text: 'MongoDB',
                         link: '/database/mongoDB/'
-                    }
+                    },
+                     {
+                         text: 'Elastic Search',
+                         link: '/database/elasticSearch/'
+                     }
                 ]
             },
             {

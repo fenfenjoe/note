@@ -1,10 +1,15 @@
+---
+title:Elastic Search学习笔记
+sidebar: 'auto'
+---
+
 # Elastic Search学习笔记
 
 ### 参考
 Elasticsearch－基础介绍及索引原理分析 [https://www.cnblogs.com/dreamroute/p/8484457.html](https://www.cnblogs.com/dreamroute/p/8484457.html)  
 ElasticSearch官方文档<https://www.elastic.co/guide/cn/elasticsearch/guide/2.x/intro.html>  
 
-### 什么是ES
+## 什么是ES
 
 Elastic Search，一个分布式、可扩展的实时搜索和分析引擎；
 一个文档型数据库，数据以JSON作为文档序列化的格式；
@@ -21,27 +26,27 @@ ES中的概念
 | 文档（Doc）       | 等于RDBMS中**行（Row）** 的概念 ，以JSON格式来表示                                                  |
 | 字段（Field）     | 等于RDBMS中**列（Column）** 的概念 ，以JSON格式来表示                                               |
 
-### 为什么用ES
+## 为什么用ES
 
 如果你的系统需要快速的、支持大数据量的全文检索功能；
 如果你的系统需要一个可扩展的分布式搜索引擎；
 
-### ES的应用场景
+## ES的应用场景
 日志分析（ELK框架，还新增了一个FileBeat）
 
-### ES的特性
+## ES的特性
 
 * 支持分布式架构
 * 高性能的搜索引擎
 * 支持多种数据结构（文本、数值、日期、地理位置等）
 
-### ES可视化管理工具
+## ES可视化管理工具
 
     **ElasticHD**
     **Dejavu**
     **Kibana**
 
-### ES索引
+## ES索引
 
 #### 创建ES索引
 创建ES索引的请求一般是这样的：
@@ -104,7 +109,7 @@ DELETE /my_index
 ```
 
 
-### 原理
+## 原理
 #### ES存储原理&索引
 
 ![7.png](./assets/7.png)
@@ -211,7 +216,7 @@ name字段的分词索引：
 
 
 
-### ES的使用
+## ES的使用
 #### 安装ES服务器
 略
 #### 配置文件

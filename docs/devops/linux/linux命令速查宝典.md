@@ -7,7 +7,7 @@ sidebar: 'auto'
 # Linux运维速查宝典
 
 ## 常用命令
-### PS ：查看当前进程状态
+### 查看当前进程状态：【PS】
 ```
 ps aux|grep ktin 
 //查看包含"ktin"字眼的进程的信息，其中第2列为PID
@@ -15,10 +15,10 @@ ps aux|grep ktin
 ps -ef|grep srm-esb-*
 //查看以srm-esb-开头的进程的信息
 ```
-### DF：查看磁盘占用情况
+### 查看磁盘占用情况：【DF】
 df -h
 
-### TOP ：查看负载、查看内存使用情况、查看进程
+### 查看负载、查看内存使用情况、查看进程：【TOP】 
 
 示例：
 ```
@@ -62,7 +62,7 @@ MiB Swap: 2048.0 total, 2048.0 free, 0.0 used. 4878.4 avail Mem
 23128 alvin 20 0 16836 5636 4284 S 0.0 0.1 0:00.03 zsh
 ```
 
-### NETSTAT：查看端口占用情况
+### 查看端口占用情况:【NETSTAT】
 ```bash
 #查看某个端口
 lsof -i:8080
@@ -71,7 +71,7 @@ lsof -i:8080
 netstat -tunlp
 ```
 
-### FIND：文件查找
+### 文件查找：【FIND】
 ```bash
 # 默认从当前目录查找；查找时默认包括子目录；
 
@@ -88,9 +88,24 @@ find . -type f -size +500M
 # 找出目录下（包括子目录）所有大小大于500M的文件
 ```
 
-### CURL：文件上传、下载
 
-### VIM：文本编辑
+### 解决已删除文件但未释放空间的问题：【lsof】
+
+```bash
+# 查看被删除但是未释放空间的文件，其中第2列为pid
+lsof | grep deleted
+
+# 查看未释放空间文件在该pid下的文件句柄 （返回值类似： 3 -> /delete.tmp，“3”就是文件句柄）
+ll /proc/[pid]/fd | grep delete.tmp
+
+# 将文件句柄置空，完成。
+echo > /proc/PID/fd/[文件句柄]
+```
+
+
+### 文件上传、下载：【CURL】
+
+### 文本编辑：【VIM】
 
 ```bash
 vim systemOut.log
@@ -112,9 +127,9 @@ i #进入编辑模式
 * Ctrl+B #上一页
 
 
-### HOSTNAMECTL：查看Linux发行版本
+### 查看Linux发行版本：【HOSTNAMECTL】
 
-### GREP：全文检索
+### 全文检索：【GREP】
 ```bash
 grep --help   
 # 查看帮助
@@ -126,7 +141,7 @@ grep -lr 'string' /etc/
 ```
 
 
-### SOURCE:执行某段shell脚本
+### 执行某段shell脚本：【SOURCE】
 假设有以下shell脚本：
 ```bash
 # test.sh
@@ -141,7 +156,7 @@ source ./test.sh
 # 以管理员身份浏览yum文件
 sudo vim /usr/bin/yum
 ```
-### 文件操作：touch、rm、mkdir、vim、cp、mv
+### 文件操作：【touch、rm、mkdir、vim、cp、mv】
 ```bash
 touch <filename>   
 # 创建文件
@@ -165,7 +180,7 @@ mv <source> <target>
 # 移动文件/文件重命名
 ```
 
-### 在后台运行脚本：nohup
+### 在后台运行脚本：【nohup】
 
 nohup 英文全称 no hang up（不挂起），用于在系统后台不挂断地运行命令，退出终端不会影响程序的运行。  
 nohup 命令，在默认情况下（非重定向时），会输出一个名叫 nohup.out 的文件到当前目录下，如果当前目录的 nohup.out 文件不可写，输出重定向到 $HOME/nohup.out 文件中。
@@ -187,7 +202,7 @@ nohup java -jar Test.jar > Test_$(date +%Y-%m-%d).log &
 nohup ./test.sh > out.txt 2>&1 &
 ```
 
-### yum、rpm、apt-get：下载、安装、卸载软件
+### 下载、安装、卸载软件：【yum、rpm、apt-get】
 
 **Debian系：（Debian, Ubuntu, Xandros, Linspire）**
 
@@ -229,7 +244,7 @@ yum list [package-name] --showduplicates | sort -r
 #下载并安装
 yum install [package-name]
 ```
-### ROUTE：查看Linux的路由表
+### 查看Linux的路由表：【ROUTE】
 ```bash
 [root@VM_139_74_centos ~]# route
 Kernel IP routing table
@@ -244,7 +259,7 @@ link-local      0.0.0.0         255.255.0.0     U     1002   0        0 eth0
 172.20.0.0      0.0.0.0         255.255.0.0     U     0      0        0 br-7485db25f958
 ```
 
-### firewalld：防火墙操作
+### 防火墙操作：【firewalld】
 
 firewall-cmd--version
 
@@ -258,7 +273,7 @@ $ env |grep JAVA_HOME
 $ echo $JAVA_HOME
 ```
 
-### CAT:文件内容检索、修改
+### 文件内容检索、修改：【CAT】
 ```bash
 #查看text.txt的所有内容
 cat text.txt 
@@ -291,7 +306,7 @@ cat -n text.txt|tail -n +100|more
 
 ```
 
-### LESS:滚动查看文件
+### 滚动查看文件：【LESS】
 ```bash
 #进入并查看文件
 LESS text.txt
@@ -308,7 +323,7 @@ q    退出less模式
 
 ```
 
-### TAIL:查看日志
+### 查看日志：【TAIL】
 ```bash
 #滚动式查看日志
 tail -f ./2022-10-10.log
