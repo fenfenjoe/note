@@ -138,6 +138,23 @@ export const navs =
         ]
     },
     {
+        text: '量化',
+        children: [
+            {
+                text: '金融知识学习',
+                link: '/quant/金融知识学习.md' //默认跳转到READMD.md
+            },
+            {
+                text: '聚宽',
+                link: '/quant/聚宽.md'
+            },
+             {
+                 text: '因子分析',
+                 link: '/quant/因子分析.md'
+             }
+        ]
+    },
+    {
         text: '其他',
         children: [
             {

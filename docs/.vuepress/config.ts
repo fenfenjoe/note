@@ -9,6 +9,7 @@ import { navs } from './nav'
 //import { pluginMediumZoom } from '@vuepress/plugin-medium-zoom'
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance"
 import { componentsPlugin } from "vuepress-plugin-components"
+import { searchPlugin } from '@vuepress/plugin-search'
 
 export default defineUserConfig({
     bundler: viteBundler(),
@@ -22,7 +23,8 @@ export default defineUserConfig({
     description: 'Just playing around',
     //base: '/note/',  //基础路径
     head: [
-      ['link',{rel: 'icon', href: '/images/favicon.ico'}]  //网站图标
+      ['link',{rel: 'icon', href: '/images/favicon.ico'}],  //网站图标
+      ['link',{rel: 'stylesheet', href: '/css/index.css'}]  //自定义的样式
     ],
     plugins:[
         mdEnhancePlugin({
@@ -38,6 +40,7 @@ export default defineUserConfig({
             components:[
                 "BiliBili",
             ]
-        })
+        }),
+        searchPlugin({}) //搜索引擎插件，会生成本地索引文件，若网站文章过多，建议切换成docSearch插件
     ]
 })
