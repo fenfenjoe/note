@@ -1,5 +1,5 @@
 ---
-title: Windows命令速查宝典
+title: 'Windows命令速查宝典'
 sidebar: 'auto'
 ---
 

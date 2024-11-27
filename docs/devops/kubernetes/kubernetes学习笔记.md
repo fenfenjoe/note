@@ -1,5 +1,5 @@
 ---
-title: Kubernetes笔记
+title: 'Kubernetes笔记'
 sidebar: 'auto'
 ---
 

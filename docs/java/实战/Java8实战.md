@@ -1,5 +1,5 @@
 ---
-title: JAVA8实战
+title: 'JAVA8实战'
 sidebar: 'auto'
 sidebarDepth: 2
 ---

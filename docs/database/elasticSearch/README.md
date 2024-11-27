@@ -1,5 +1,5 @@
 ---
-title:Elastic Search学习笔记
+title: 'Elastic Search学习笔记'
 sidebar: 'auto'
 ---
 

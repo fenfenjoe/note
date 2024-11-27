@@ -1,5 +1,5 @@
 ---
-title: RSS
+title: 'RSS'
 sidebar: 'auto'
 sidebarDepth: 2
 ---

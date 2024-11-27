@@ -1,5 +1,5 @@
 ---
-title: 概率论
+title: '概率论'
 sidebar: 'auto'
 ---
 

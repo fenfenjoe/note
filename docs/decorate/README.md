@@ -1,5 +1,5 @@
 ---
-title: 装修那些事儿
+title: '装修那些事儿'
 sidebar: 'auto'
 ---
 

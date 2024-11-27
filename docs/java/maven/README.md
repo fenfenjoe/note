@@ -1,5 +1,5 @@
 ---
-title: Maven
+title: 'Maven'
 sidebar: 'auto'
 sidebarDepth: 2
 ---

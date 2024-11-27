@@ -1,5 +1,5 @@
 ---
-title: Linux运维速查宝典
+title: 'Linux运维速查宝典'
 sidebar: 'auto'
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 统计学
+title: '统计学'
 sidebar: 'auto'
 ---
 

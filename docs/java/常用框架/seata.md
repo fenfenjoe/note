@@ -1,5 +1,5 @@
 ---
-title: SEATA
+title: 'SEATA'
 sidebar: 'auto'
 sidebarDepth: 2
 ---

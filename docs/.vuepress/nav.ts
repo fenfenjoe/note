@@ -111,7 +111,7 @@ export const navs =
             },
             {
                 text: '线性代数',
-                link: '/math/xsds/',
+                link: '/math/xsds/线性代数.md',
                 children: [
                     {
                         text: '行列式',

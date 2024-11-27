@@ -1,5 +1,5 @@
 ---
-title: Docker
+title: 'Docker'
 sidebar: 'auto'
 ---
 

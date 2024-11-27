@@ -1,5 +1,5 @@
 ---
-title: Freemarker
+title: 'Freemarker'
 sidebar: 'auto'
 sidebarDepth: 2
 ---
