@@ -1,5 +1,6 @@
 ---
 title: RocketMQ
+sidebar: 'auto'
 ---
 
 # RocketMQ
@@ -9,80 +10,94 @@ title: RocketMQ
 ## 参考
 Gitee中文开发者文档：[https://gitee.com/apache/rocketmq/tree/master/docs/cn#/apache/rocketmq/blob/master/docs/cn/concept.md](https://gitee.com/apache/rocketmq/tree/master/docs/cn#/apache/rocketmq/blob/master/docs/cn/concept.md)
 
-## 原理
+## FAQ
 
-* RocketMQ有哪些角色？
-    - NameServer  
-      特点：轻量级，无状态，地位是一个注册中心，作用类似于Eureka、Zookeeper，负责记录Broker、Producer、Consumer的路由信息
-    - Broker  
-      MQ服务器的本体，负责接收、储存、发送消息，多台Broker构成一个MQ集群
-    - Producer  
-      生产者，消息的发送方
-    - Consumer  
-      消费者，消息的处理方
+### 1.RocketMQ有哪些角色？
+- NameServer  
+  - 特点：轻量级，无状态，地位是一个注册中心，作用类似于Eureka、Zookeeper，负责记录Broker、Producer、Consumer的路由信息
+- Broker  
+  - MQ服务器的本体，负责接收、储存、发送消息，多台Broker构成一个MQ集群
+  - 又分为主broker和从broker
+- Producer  
+  - 生产者，消息的发送方
+- Consumer  
+  - 消费者，消息的处理方
+- Topic
+  - 主题
+- Message Queue
+  - 消息队列，Topic的物理实现，一个Topic可以有多个队列
 
-  > 这里说的“NameServer是无状态的”是什么意思？
-  > 指NameServer间无需同步数据，无需通信，维护的数据无需做到强一致性。
+> 这里说的“NameServer是无状态的”是什么意思？
+> 指NameServer间无需同步数据，无需通信，维护的数据无需做到强一致性。
 
-* RocketMQ消息发送、存储、消费的流程？
-    - Producer向指定的Topic发送一条消息
-    - Producer会从NameServer获得Broker列表中，选择一个Broker向其发送
-    - Broker收到消息后，会将其保存到CommitLog文件中
+### 2.RocketMQ消息发送、存储、消费的流程？
 
-* Broker如何对消息进行持久化？
-  主要依靠3类文件：
-    - commitLog（数据文件，1G1个文件）
-    - consumeQueue（基于Topic的索引文件）
-    - indexfile（基于Key或时间的索引文件）  
-      有两种方式：
-    - 同步刷盘：即保存到硬盘后才给Producer发ACK确认，保证数据不会丢失，但性能较差；
-    - 异步刷盘：保存到PageCache（内存）中便给Producer发ACK确认，性能较快，但有数据丢失的可能
+1. **消息发送**  
+   - Producer通过**生产者端负载均衡策略**，选择其中一个队列（Queue）来向其发送消息，策略有：
+   - 轮询
+   - 自定义策略（指定MessageQueueSelector）
+   - 容错策略
 
-* 如何保证数据不丢失？
-    - 生产者：
-        1. 增加一个重新发送机制：发送消息成功后，我们将Message以Json形式保存到数据库的一张表中，并设置状态“已发送”；
-           然后设置一个轮询器（Schedular）,定时查出未发送的Message，并重新发送；
-           当消费者端需要我们重发消息，只要修改表中该Message的状态为“未发送”，轮询器便会重新发送。
-    - Broker：
-        1. 采用同步刷盘的方式持久化消息；
-        2. 集群模式下，主Broker和从Broker间采用同步复制，即等待从Broker复制消息完成后才返回ACK确认
-    - Consumer：
-        1. offset手动提交
-        2. 建立一种补偿机制，即把每条需要消费的消息都保存到库里，若因为某些原因，这条消息消费不成功，也可以自己重新消费一遍。
+2. **消息接收**
+   - Broker收到消息后，会将其保存到CommitLog文件中
 
+3. **消息消费**
 
-* 如何保证消息按顺序让消费者消费？
-    - 保证消息由同一线程发送（默认单线程发送）
-    - 保证消息保存到同一个Queue（发送时，可以通过入参MessageQueueSelector选择固定的Queue）
-    - 保证消息发送到同一Topic（往同一Topic发送消息即可）
-    - 保证消息由同一个线程消费
+### 3.Broker如何对消息进行持久化？
+主要依靠3类文件：
+- commitLog（数据文件，1G1个文件）
+- consumeQueue（基于Topic的索引文件）
+- indexfile（基于Key或时间的索引文件）  
+  有两种方式：
+- 同步刷盘：即保存到硬盘后才给Producer发ACK确认，保证数据不会丢失，但性能较差；
+- 异步刷盘：保存到PageCache（内存）中便给Producer发ACK确认，性能较快，但有数据丢失的可能
 
-
-
-* 如何避免消息重复消费？
-    - 导致重复消费的原因是：Consumer消费完并发送ACK确认，但因网络原因，Broker没收到，因此重新推送了一次消息，导致再消费了一次。
-    - 如何避免：
-        - 保证消息消费幂等（如下）。
-
-* 消费者如何保证幂等（即如果一条消息发出去多次，保证只会被消费一次）？
-    - 消费者是单机：取到数据的ID，存到 ConcurrentHashMap -> putIfAbsent() ，或者guava、cache里
-    - 消费者是集群：取到数据的ID，存到Redis；
-    - 消费前先看这条数据的ID是否已经被保存了，如果是，则证明之前已经被消费过了，不再重新消费。
+### 4.如何保证数据不丢失？
+- 生产者：
+    1. 增加一个重新发送机制：发送消息成功后，我们将Message以Json形式保存到数据库的一张表中，并设置状态“已发送”；
+       然后设置一个轮询器（Schedular）,定时查出未发送的Message，并重新发送；
+       当消费者端需要我们重发消息，只要修改表中该Message的状态为“未发送”，轮询器便会重新发送。
+- Broker：
+    1. 采用同步刷盘的方式持久化消息；
+    2. 集群模式下，主Broker和从Broker间采用同步复制，即等待从Broker复制消息完成后才返回ACK确认
+- Consumer：
+    1. offset手动提交
+    2. 建立一种补偿机制，即把每条需要消费的消息都保存到库里，若因为某些原因，这条消息消费不成功，也可以自己重新消费一遍。
 
 
+### 5.如何保证消息按顺序让消费者消费？
+- 保证消息由同一线程发送（默认单线程发送）
+- 保证消息保存到同一个Queue（发送时，可以通过入参MessageQueueSelector选择固定的Queue）
+- 保证消息发送到同一Topic（往同一Topic发送消息即可）
+- 保证消息由同一个线程消费
 
 
-* RocketMQ是如何做负载均衡的？
-  > 参考资料：https://blog.csdn.net/Weixiaohuai/article/details/123898841
 
-  Topic在多个Broker中分布式存储。生产者、消费者按照一定的策略，向Broker发送、接收消息。
+### 6.如何避免消息重复消费？
+- 导致重复消费的原因是：Consumer消费完并发送ACK确认，但因网络原因，Broker没收到，因此重新推送了一次消息，导致再消费了一次。
+- 如何避免：
+    - 保证消息消费幂等（如下）。
 
-  分为生产者负载均衡（生产者将消息发送给哪个Broker）、消费者负载均衡（消费者向哪个Broker监听消息）。
+### 7.消费者如何保证幂等（即如果一条消息发出去多次，保证只会被消费一次）？
+- 消费者是单机：取到数据的ID，存到 ConcurrentHashMap -> putIfAbsent() ，或者guava、cache里
+- 消费者是集群：取到数据的ID，存到Redis；
+- 消费前先看这条数据的ID是否已经被保存了，如果是，则证明之前已经被消费过了，不再重新消费。
 
-  【生产者负载均衡】
 
-  原理：Round-Robin（完全轮询）算法，即获取Topic的所有Queue，每次发送按顺序选择一个Queue发送。
-  看源码可知，生产者（底层是用DefaultMQProducerImpl）向Topic发送消息时，会调用mqFaultStrategy.selectOneMessageQueue来选择Queue。
+
+
+### 8.RocketMQ是如何做负载均衡的？
+
+> 参考资料：https://blog.csdn.net/Weixiaohuai/article/details/123898841
+
+Topic在多个Broker中分布式存储。生产者、消费者按照一定的策略，向Broker发送、接收消息。
+
+分为生产者负载均衡（生产者将消息发送给哪个Broker）、消费者负载均衡（消费者向哪个Broker监听消息）。
+
+【生产者负载均衡】
+
+原理：Round-Robin（完全轮询）算法，即获取Topic的所有Queue，每次发送按顺序选择一个Queue发送。
+看源码可知，生产者（底层是用DefaultMQProducerImpl）向Topic发送消息时，会调用mqFaultStrategy.selectOneMessageQueue来选择Queue。
 
 
 
@@ -125,16 +140,16 @@ D：4、8
 将Consumer和Queue都求出一个哈希值，然后按照哈希值组成一个环形，离Queue最近的Consumer负责消费它。
 
 
-* Spring是如何加载和管理RocketMQListener的？
+### 9.Spring是如何加载和管理RocketMQListener的？
 
-    1. Spring启动时，会加载Rocketmq的自动配置类ListenerContainerConfiguration
-    2. ListenerContainerConfiguration实现了SmartInitializingSingleton接口，当Spring加载完所有Bean后，会执行里面的afterSingletonsInstantiated()方法
-       此时会为每个RocketMQMessageListener注册一个Container（DefaultRocketMQListenerContainer）。
-    3. Container实现了InitializingBean接口，当Spring初始化Container Bean的时候，便会调用其afterPropertiesSet()方法，此时为RocketMQListener初始化consumer
-       afterPropertiesSet() -> initRocketMQPushConsumer() -> 配置Consumer（NameServer、超时时间、MessageModel（广播还是集群）、Tag、消费模式（串行还是并发））
-    4. 注册完后，会调用container.start()方法，启动Listener去监听对应的Topic
+1. Spring启动时，会加载Rocketmq的自动配置类ListenerContainerConfiguration
+2. ListenerContainerConfiguration实现了SmartInitializingSingleton接口，当Spring加载完所有Bean后，会执行里面的afterSingletonsInstantiated()方法
+   此时会为每个RocketMQMessageListener注册一个Container（DefaultRocketMQListenerContainer）。
+3. Container实现了InitializingBean接口，当Spring初始化Container Bean的时候，便会调用其afterPropertiesSet()方法，此时为RocketMQListener初始化consumer
+   afterPropertiesSet() -> initRocketMQPushConsumer() -> 配置Consumer（NameServer、超时时间、MessageModel（广播还是集群）、Tag、消费模式（串行还是并发））
+4. 注册完后，会调用container.start()方法，启动Listener去监听对应的Topic
 
-* 不用Spring的时候，如何使用Rocketmq？
+### 10.不用Spring的时候，如何使用Rocketmq？
 ```java
 public class Test{
     
