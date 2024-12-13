@@ -7,7 +7,7 @@ sidebar: 'auto'
 # Linux运维速查宝典
 
 ## 常用命令
-### 查看当前进程状态：【PS】
+### 查看当前进程状态：【ps】
 ```
 ps aux|grep ktin 
 //查看包含"ktin"字眼的进程的信息，其中第2列为PID
@@ -15,10 +15,10 @@ ps aux|grep ktin
 ps -ef|grep srm-esb-*
 //查看以srm-esb-开头的进程的信息
 ```
-### 查看磁盘占用情况：【DF】
+### 查看磁盘占用情况：【df】
 df -h
 
-### 查看负载、查看内存使用情况、查看进程：【TOP】 
+### 查看负载、内存、进程：【top】 
 
 示例：
 ```
@@ -62,7 +62,7 @@ MiB Swap: 2048.0 total, 2048.0 free, 0.0 used. 4878.4 avail Mem
 23128 alvin 20 0 16836 5636 4284 S 0.0 0.1 0:00.03 zsh
 ```
 
-### 查看端口占用情况:【NETSTAT】
+### 查看端口占用情况:【netstat】
 ```bash
 #查看某个端口
 lsof -i:8080
@@ -71,7 +71,7 @@ lsof -i:8080
 netstat -tunlp
 ```
 
-### 文件查找：【FIND】
+### 文件查找：【find】
 ```bash
 # 默认从当前目录查找；查找时默认包括子目录；
 
@@ -89,7 +89,7 @@ find . -type f -size +500M
 ```
 
 
-### 解决已删除文件但未释放空间的问题：【lsof】
+### 已删除文件但未释放空间：【lsof】
 
 ```bash
 # 查看被删除但是未释放空间的文件，其中第2列为pid
@@ -103,9 +103,9 @@ echo > /proc/PID/fd/[文件句柄]
 ```
 
 
-### 文件上传、下载：【CURL】
+### 文件上传、下载：【curl】
 
-### 文本编辑：【VIM】
+### 文本编辑：【vim】
 
 ```bash
 vim systemOut.log
@@ -127,9 +127,9 @@ i #进入编辑模式
 * Ctrl+B #上一页
 
 
-### 查看Linux发行版本：【HOSTNAMECTL】
+### 查看Linux版本：【hostnamectl】
 
-### 全文检索：【GREP】
+### 全文检索：【grep】
 ```bash
 grep --help   
 # 查看帮助
@@ -141,7 +141,7 @@ grep -lr 'string' /etc/
 ```
 
 
-### 执行某段shell脚本：【SOURCE】
+### 执行某段shell脚本：【source】
 假设有以下shell脚本：
 ```bash
 # test.sh
@@ -151,12 +151,12 @@ echo 'hello world'
 ```bash
 source ./test.sh
 ```
-### SUDO：以管理员身份运行命令
+### 以管理员身份运行命令：【sudo】
 ```bash
 # 以管理员身份浏览yum文件
 sudo vim /usr/bin/yum
 ```
-### 文件操作：【touch、rm、mkdir、vim、cp、mv】
+### 文件操作：【touch、rm等】
 ```bash
 touch <filename>   
 # 创建文件
@@ -244,7 +244,7 @@ yum list [package-name] --showduplicates | sort -r
 #下载并安装
 yum install [package-name]
 ```
-### 查看Linux的路由表：【ROUTE】
+### 查看Linux的路由表：【route】
 ```bash
 [root@VM_139_74_centos ~]# route
 Kernel IP routing table
@@ -263,7 +263,7 @@ link-local      0.0.0.0         255.255.0.0     U     1002   0        0 eth0
 
 firewall-cmd--version
 
-### ENV：查看环境变量
+### 查看环境变量：【env】
 ```bash
 #显示所有环境变量
 $ env
@@ -273,7 +273,7 @@ $ env |grep JAVA_HOME
 $ echo $JAVA_HOME
 ```
 
-### 文件内容检索、修改：【CAT】
+### 文件内容检索、修改：【cat】
 ```bash
 #查看text.txt的所有内容
 cat text.txt 
@@ -306,7 +306,7 @@ cat -n text.txt|tail -n +100|more
 
 ```
 
-### 滚动查看文件：【LESS】
+### 滚动查看文件：【less】
 ```bash
 #进入并查看文件
 LESS text.txt
@@ -323,7 +323,7 @@ q    退出less模式
 
 ```
 
-### 查看日志：【TAIL】
+### 查看日志：【tail】
 ```bash
 #滚动式查看日志
 tail -f ./2022-10-10.log

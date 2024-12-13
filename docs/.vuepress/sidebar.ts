@@ -30,7 +30,7 @@ export const sidebar = {
             children: [
                 {text:'概述',link:'/azilnote/README.md'},
                 {
-                    text:'Vuepress1.x',
+                    text:'现在开始！',
                     children:[
                         {text:'初始化项目',link:'/azilnote/初始化项目.md'},
                         {text:'写一篇文章',link:'/azilnote/写一篇文章.md'},
@@ -44,12 +44,7 @@ export const sidebar = {
                         {text:'申请属于自己的域名',link:'/azilnote/申请属于自己的域名.md'},
                         {text:'迁移至Vuepress2.0',link:'/azilnote/迁移至v2.x.md'}
                     ]
-                },
-                {
-                    text:'Vuepress2.x',
-                    children:[
-                    ]
-                },
+                }
             ]
         }
     ],

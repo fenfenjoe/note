@@ -93,12 +93,25 @@ export const navs =
                     {
                         text: '运维工具大全',
                         link: '/devops/运维工具大全.md'
-                    },
-                     {
-                         text: 'IDEA快捷键大全+动图演示',
-                         link: '/devops/ide/IDEA快捷键大全.md'
-                     }
+                    }
                  ]
+             },
+             {
+                text: '大数据',
+                children: [
+                    {
+                         text: '概览',
+                         link: '/bigdata/概览.md'
+                    },
+                    {
+                         text: 'Hadoop',
+                         link: '/bigdata/Hadoop学习笔记.md'
+                    },
+                    {
+                         text: 'Hive',
+                         link: '/bigdata/Hive学习笔记.md'
+                     },
+                ]
              }
         ]
     },

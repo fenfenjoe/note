@@ -11,6 +11,7 @@ sidebar: 'auto'
 依赖：zookeeper（0.5.x后kafka内置了zookeeper的单机版环境）
 
 ### 参考
+【官网】<https://kafka.apache.org/>
 【kafka的版本号与版本演进】[https://blog.csdn.net/liuxiao723846/article/details/106020738/](https://blog.csdn.net/liuxiao723846/article/details/106020738/)  
 【apache kafka技术分享系列(目录索引)】[https://blog.csdn.net/lizhitao/article/details/39499283](https://blog.csdn.net/lizhitao/article/details/39499283)  
 【知乎：kafka(一) 消息队列的本质】[https://zhuanlan.zhihu.com/p/355343254](https://zhuanlan.zhihu.com/p/355343254)  
