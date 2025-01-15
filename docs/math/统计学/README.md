@@ -978,6 +978,9 @@ $$ z = \frac{(\bar{x_1}-\bar{x_2})-(\mu_1-\mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1}+\
 * 按自变量的个数，分为：一元回归、多元回归
 * 按变量之间的关系形态，分为：线性回归、非线性回归
 
+【回归分析的输出】  
+
+回归方程  
 
 ### 7.1 一元线性回归模型
 
@@ -995,3 +998,4 @@ $$y_i = \beta_0 + \beta_1 x_i + \varepsilon$$
 1. $E(\varepsilon) = 0$ （均值为0）
 2. $Var(\varepsilon_i) = Var(y_i) = \sigma^2$ （方差固定为$\sigma^2$）
 3. $Cov(\varepsilon_i,\varepsilon_j)=0$ （$\varepsilon$服从正态分布）
+
