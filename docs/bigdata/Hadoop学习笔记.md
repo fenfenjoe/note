@@ -27,6 +27,7 @@ Apache官网：https://hadoop.apache.org/
 两大组件：
 * HDFS
 * MapReduce
+* Yarn（2.0）
 
 
 

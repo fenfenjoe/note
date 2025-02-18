@@ -3,18 +3,41 @@
 
 ## 依赖包
 
+pom.xml  
 ```xml
-<dependency>
+<dependencies>
+  <dependency>
     <groupId>org.springframework.data</groupId>
     <artifactId>spring-data-mongodb</artifactId>
     <version>3.4.1</version>
-</dependency>
-<dependency>
+  </dependency>
+  <dependency>
     <groupId>org.mongodb</groupId>
     <artifactId>mongodb-driver-sync</artifactId>
     <version>4.5.0</version>
-</dependency>
+  </dependency>
+</dependencies>
 ```
+
+## 配置
+
+application.yaml
+```yaml
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/
+      host: localhost
+      port: 27017
+      database: mydb
+      username: myuser
+      password: mypass
+      authentication-database: admin
+      gridfs:
+        enabled: true
+```
+
+
 
 ## API
 
